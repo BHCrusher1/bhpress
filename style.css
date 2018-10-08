@@ -1,0 +1,448 @@
+/*
+theme Name: BHpress
+Theme URL: https://bhcrusher1.net
+Author: BHCrusher1
+Author URI: https://twitter.com/BHCrusher1
+Version: 0.0.1
+Tags: 
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@charset "utf-8";
+
+/* ********************
+  [1] HTML全体の設定
+******************** */
+
+@media (max-width: 1023px) {
+	html{
+		font-size:calc(0.875rem + ((1vw - 3.2px) * 0.2841));
+	}
+}
+
+@media (min-width: 1024px) {
+	html{
+		font-size:16px;
+	}
+}
+
+body{
+	background-color:#D7CCC8;
+	padding:0px;
+	margin:0px;
+	line-height:1.25;
+	font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",YuGothic,"ヒラギノ角ゴ ProN W3",Hiragino Kaku Gothic ProN,Arial,"メイリオ",Meiryo,sans-serif;
+}
+
+@media (min-width: 721px){
+	.wrap{
+		margin:auto;
+		max-width:1280px;
+	}
+	.wrap:after{
+		clear: both;
+		content: "";
+		display: block;
+	}
+}
+
+@media (max-width: 720px){
+	.wrap{
+		margin:auto;
+		max-width:720px;
+	}
+}
+
+/* ********************
+  [2] HTML全体のタグ設定
+******************** */
+
+a{
+	color:#5C6BC0;
+	word-break: break-all;
+}
+
+a:link{
+	color:#5C6BC0;
+}
+
+a:visited{
+	color:#5C6BC0;
+}
+
+a:hover{
+	color:#1A237E;
+}
+
+a:active{
+	color:#5C6BC0;
+}
+
+img{
+	max-width:100%;
+	height:auto;
+	float:none;
+}
+
+embed, iframe, object {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+/* ********************
+  [3] headerの設定
+******************** */
+
+#masthead{
+	background-color:#FFF;
+	padding-bottom:0.5em;
+}
+
+.site-branding-text{
+	padding:2em;
+	text-decoration:none;
+}
+
+.site-branding-text h1,.site-branding-text p{
+	clear:both;
+    margin:0;
+    padding:0;
+}
+
+.site-title{
+	font-size:36px;
+	font-size:2.25rem;
+	font-weight: bold;
+}
+
+.site-title a{
+	text-decoration:none;
+	color: #000;
+}
+
+/* ********************
+  [4] メインコンテンツ全体の設定
+******************** */
+
+@media (min-width: 721px){
+	#primary,#secondary{
+		margin:8px;
+	}
+	#primary{
+		float:left;
+		max-width:calc(70% - 16px);
+	}
+	#secondary{
+		float:right;
+		max-width:calc(30% - 16px);
+	}
+}
+
+@media (max-width: 720px){
+	#primary,#secondary{
+		margin:6px;
+	}
+}
+
+article,section{
+	background-color:#FFF;
+	margin-bottom:2em;
+	border-radius:16px;
+}
+
+/* ********************
+  [5] 記事内ヘッダの設定
+******************** */
+
+.entry-header{
+	padding:0.5em;
+	background-color:#BBDEFB;
+	border-top-left-radius:16px;
+	border-top-right-radius:16px;
+}
+
+.entry-title,.entry-meta{
+	display:inline-block;
+}
+
+.entry-meta{
+	margin:0 0 0 1em;
+}
+.entry-meta span{
+	margin:0 0 0 0.5em;
+}
+
+/* ********************
+  [6] SNSボタンの設定
+******************** */
+
+.snsbutton{
+	list-style:none;
+	line-height:2em;
+	padding:1em 0.5em;
+	margin:0;
+	display:flex;
+	justify-content:space-between;
+}
+.snsbutton li{
+	width:30%;
+}
+.snsbutton a{
+	text-align:center;
+	border-radius:1em;
+	display:block;
+	color:#FFF;
+	text-decoration:none;
+}
+
+.snsbutton li.share-twitter a{
+	background:#1DA1F2;
+	box-shadow:0 4px 2px rgba(29, 161, 242,.2);
+}
+
+.snsbutton li.share-twitter a:hover{
+	background:#4892cb;
+}
+
+.snsbutton li.share-facebook a{
+	background:#4267b2;
+	box-shadow:0 4px 2px rgba(66, 103, 178,.2)
+}
+
+.snsbutton li.share-facebook a:hover{
+	background:#365899;
+}
+
+.snsbutton li.share-line a{
+	background:#1dcd00;
+	box-shadow:0 4px 2px rgba(29, 205, 0,.2)
+}
+
+.snsbutton li.share-line a:hover{
+	background:#2bd92b;
+}
+
+#primary article hr{
+	margin:0 0.5em;
+}
+
+/* ********************
+  [7] メインコンテンツ本体の設定
+******************** */
+
+.entry-content{
+	padding:0 0.5em;
+}
+
+/* ********************
+  [8] 記事内フッダーの設定
+******************** */
+
+.related{
+	padding:0 0.5em;
+}
+
+.related ul {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.related ul li{
+	display:flex;
+	padding:0.25em 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.related ul li a{
+	display:flex;
+	width:100%;
+}
+
+.related img{
+	padding:0;
+	margin:auto 0;
+}
+
+.related h3,.related time{
+	font-size:100%;
+	padding:0;
+	margin:auto 0 auto 0.5em;
+}
+
+/* ********************
+  [9] コメント欄の設定
+******************** */
+
+#comments{
+	background-color:#FFF;
+	padding:0.5em;
+	margin:2em 0;
+	border-radius:1em;
+}
+
+/* ********************
+  [10] 前後の記事ナビバーの設定
+******************** */
+
+.pagination,
+.comments-pagination{
+	font-weight: 800;
+	text-align: center;
+}
+
+.has-sidebar .navigation.pagination,.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
+    float:none;
+}
+
+.pagination{
+	background-color:#FFF;
+	padding:0.5em;
+	margin:2em 0;
+	border-radius:1em;
+}
+
+.prev.page-numbers{
+    float:left;
+}
+
+.next.page-numbers{
+    float:right;
+}
+
+.page-numbers.current{
+    display:inline-block;
+}
+
+.page-numbers{
+	display:inline-block;
+	padding:0.5em 1em;
+}
+
+.post-navigation{
+	background-color:#FFF;
+	padding:0.5em;
+	margin:2em 0;
+	border-radius:1em;
+	font-weight: 800;
+	margin: 3em 0;
+}
+
+.pagination:after,.post-navigation:after{
+	clear:both;
+	content:"";
+	display:block;
+}
+
+.nav-previous,.nav-next{
+	display:inline-block;
+}
+
+@media (min-width: 721px){
+	.post-navigation .nav-previous{
+	    float:left;
+	    width:50%;
+	}
+	
+	.post-navigation .nav-next{
+		float:right;
+		text-align:right;
+		width:50%;
+	}
+	
+}
+
+.screen-reader-text{
+    clip:rect(1px, 1px, 1px, 1px);
+    height:1px;
+    overflow:hidden;
+    position:absolute !important;
+    width:1px;
+    word-wrap:normal !important;
+}
+
+.nav-subtitle{
+    background: transparent;
+    color:#767676;
+    display:block;
+    font-size:11px;
+    font-size:0.6875rem;
+    letter-spacing:0.1818em;
+    margin-bottom:1em;
+    text-transform:uppercase;
+}
+
+.nav-links .nav-title{
+    position:relative;
+}
+
+/* ********************
+  [11] サイドバーの設定
+******************** */
+
+.search-form{
+	padding:0.5em;
+	position: relative;
+}
+
+.widget-title{
+	padding:1em 0 1em 0.5em;
+	margin:0;
+	background-color:#F8BBD0;
+	border-top-left-radius:16px;
+	border-top-right-radius:16px;
+}
+
+#secondary section ul{
+	list-style:none;
+	padding:0 0.5em;
+	margin:0;
+	line-height:2em;
+}
+
+#secondary section ul li,#secondary section ol li{
+	border-bottom:1px solid #ddd;
+	word-wrap: break-word
+}
+
+#secondary section ul li a,#secondary section ol li a{
+	display:block;
+}
+
+/* ********************
+  [12] footerの設定
+******************** */
+
+#mastfoot{
+	background-color:#FFF;
+}
+
+#mastfoot .site-info{
+	margin:0;
+}
+
+/* ********************
+  [13] その他の設定
+******************** */
+
+input[type="search"]{
+	color: #666;
+	background: #fff;
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	padding:0.5em;
+	width:calc(100% - 4em);
+}
+
+.site-info{
+	padding:2em 1em;
+}
+
+.entry-summary{
+	padding:0.5em;
+}
