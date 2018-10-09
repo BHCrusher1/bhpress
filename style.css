@@ -131,11 +131,11 @@ embed, iframe, object {
 	}
 	#primary{
 		float:left;
-		max-width:calc(70% - 16px);
+		width:calc(70% - 16px);
 	}
 	#secondary{
 		float:right;
-		max-width:calc(30% - 16px);
+		width:calc(30% - 16px);
 	}
 }
 
@@ -147,7 +147,7 @@ embed, iframe, object {
 
 article,section{
 	background-color:#FFF;
-	margin-bottom:2em;
+	margin:1em 0;
 	border-radius:16px;
 }
 
@@ -269,15 +269,16 @@ article,section{
 	width:100%;
 }
 
-.related img{
-	padding:0;
-	margin:auto 0;
+.related-meta{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
 }
 
 .related h3,.related time{
 	font-size:100%;
 	padding:0;
-	margin:auto 0 auto 0.5em;
+	margin:0 0 0 0.5em;
 }
 
 /* ********************

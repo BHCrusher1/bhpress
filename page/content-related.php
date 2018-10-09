@@ -22,7 +22,7 @@ $wp_query = new WP_Query($args);
 if($wp_query->have_posts()){
     while($wp_query->have_posts()):$wp_query->the_post();
     ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><h3><?php the_title(); ?></h3> <time><?php echo get_the_date(); ?></time></a></li>
+            <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><div class="related-meta"><h3><?php the_title(); ?></h3> <time><?php echo get_the_date(); ?></time></div></a></li>
     <?php
     endwhile;
 }else{
