@@ -126,15 +126,15 @@ embed, iframe, object {
 
 @media (min-width: 721px){
 	#primary,#secondary{
-		margin:8px;
+		margin:6px;
 	}
 	#primary{
 		float:left;
-		width:calc(70% - 16px);
+		width:calc(70.72% - 12px);
 	}
 	#secondary{
 		float:right;
-		width:calc(30% - 16px);
+		width:calc(29.28% - 12px);
 	}
 	article,section{
 		background-color:#FFF;
