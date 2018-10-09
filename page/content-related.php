@@ -1,5 +1,5 @@
 <footer class="related">
-<span>同じカテゴリの記事</span>
+<p>同じカテゴリの記事</p>
 <ul>
 <?php
 $categories = get_the_category($post->ID);

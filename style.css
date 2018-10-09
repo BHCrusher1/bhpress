@@ -96,18 +96,14 @@ embed, iframe, object {
 
 #masthead{
 	background-color:#FFF;
-	padding-bottom:0.5em;
+	padding:0;
 }
 
-.site-branding-text{
-	padding:2em;
+.site-branding-text h1,.site-branding-text p,.site-description p{
 	text-decoration:none;
-}
-
-.site-branding-text h1,.site-branding-text p{
 	clear:both;
     margin:0;
-    padding:0;
+    padding:0.5em 0 0.5em 1em;
 }
 
 .site-title{
@@ -137,29 +133,48 @@ embed, iframe, object {
 		float:right;
 		width:calc(30% - 16px);
 	}
+	article,section{
+		background-color:#FFF;
+		margin:1em 0;
+		border-radius:1rem;
+	}
 }
 
 @media (max-width: 720px){
 	#primary,#secondary{
-		margin:6px;
+		margin:0;
 	}
+	#primary{
+		width:100%;
+	}
+	#secondary{
+		width:100%;
+	}
+	article,section{
+		background-color:#FFF;
+		margin:1em 0;
+	}
+	
 }
 
-article,section{
-	background-color:#FFF;
-	margin:1em 0;
-	border-radius:16px;
-}
 
 /* ********************
   [5] 記事内ヘッダの設定
 ******************** */
+@media (min-width: 721px){
+	.entry-header{
+		padding:0.5em;
+		background-color:#BBDEFB;
+		border-top-left-radius:1rem;
+		border-top-right-radius:1rem;
+	}
+}
 
-.entry-header{
-	padding:0.5em;
-	background-color:#BBDEFB;
-	border-top-left-radius:16px;
-	border-top-right-radius:16px;
+@media (max-width: 720px){
+	.entry-header{
+		padding:0.5em;
+		background-color:#BBDEFB;
+	}
 }
 
 .entry-title,.entry-meta{
@@ -169,7 +184,7 @@ article,section{
 .entry-meta{
 	margin:0 0 0 1em;
 }
-.entry-meta span{
+.entry-meta .cat-links{
 	margin:0 0 0 0.5em;
 }
 
@@ -250,16 +265,12 @@ article,section{
 }
 
 .related ul {
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
 	list-style:none;
 	padding:0;
 	margin:0;
 }
 
 .related ul li{
-	display:flex;
 	padding:0.25em 0;
 	border-bottom: 1px solid #ddd;
 }
@@ -277,7 +288,6 @@ article,section{
 
 .related h3,.related time{
 	font-size:100%;
-	padding:0;
 	margin:0 0 0 0.5em;
 }
 
@@ -298,8 +308,8 @@ article,section{
 
 .pagination,
 .comments-pagination{
-	font-weight: 800;
-	text-align: center;
+	font-weight:800;
+	text-align:center;
 }
 
 .has-sidebar .navigation.pagination,.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
@@ -396,12 +406,22 @@ article,section{
 	position: relative;
 }
 
-.widget-title{
-	padding:1em 0 1em 0.5em;
-	margin:0;
-	background-color:#F8BBD0;
-	border-top-left-radius:16px;
-	border-top-right-radius:16px;
+@media (min-width: 721px){
+	.widget-title{
+		padding:1em 0 1em 0.5em;
+		margin:0;
+		background-color:#F8BBD0;
+		border-top-left-radius:1rem;
+		border-top-right-radius:1rem;
+	}
+}
+
+@media (max-width: 720px){
+	.widget-title{
+		padding:1em 0 1em 0.5em;
+		margin:0;
+		background-color:#F8BBD0;
+	}
 }
 
 #secondary section ul{
