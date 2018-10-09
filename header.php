@@ -3,6 +3,9 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if(is_tag() || is_date() || is_search() || is_404()) : ?>
+	<meta name="robots" content="noindex"/>
+<?php endif; ?>
 <link rel="preload" href="<?php echo get_stylesheet_uri(); ?>" as="style">
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="preload" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" as="style">

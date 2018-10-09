@@ -54,6 +54,9 @@ body{
 	}
 }
 
+.page-header{
+	margin-left:1em;
+}
 /* ********************
   [2] HTML全体のタグ設定
 ******************** */
@@ -306,80 +309,38 @@ embed, iframe, object {
   [10] 前後の記事ナビバーの設定
 ******************** */
 
+@media (min-width: 721px){
+	.pagination{
+		background-color:#FFF;
+		padding:0.5em;
+		margin:1em 0;
+		border-radius:1em;
+	}
+}
+
+@media (max-width: 720px){
+	.pagination{
+		background-color:#FFF;
+		padding:0.5em;
+		margin:1em 0;
+	}
+}
+
 .pagination,
 .comments-pagination{
 	font-weight:800;
 	text-align:center;
 }
 
-.has-sidebar .navigation.pagination,.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
-    float:none;
+ul.page-numbers{
+	display:flex;
+	justify-content:center;
+	list-style:none;
+	padding:0;
 }
 
-.pagination{
-	background-color:#FFF;
-	padding:0.5em;
-	margin:2em 0;
-	border-radius:1em;
-}
-
-.prev.page-numbers{
-    float:left;
-}
-
-.next.page-numbers{
-    float:right;
-}
-
-.page-numbers.current{
-    display:inline-block;
-}
-
-.page-numbers{
-	display:inline-block;
-	padding:0.5em 1em;
-}
-
-.post-navigation{
-	background-color:#FFF;
-	padding:0.5em;
-	margin:2em 0;
-	border-radius:1em;
-	font-weight: 800;
-	margin: 3em 0;
-}
-
-.pagination:after,.post-navigation:after{
-	clear:both;
-	content:"";
-	display:block;
-}
-
-.nav-previous,.nav-next{
-	display:inline-block;
-}
-
-@media (min-width: 721px){
-	.post-navigation .nav-previous{
-	    float:left;
-	    width:50%;
-	}
-	
-	.post-navigation .nav-next{
-		float:right;
-		text-align:right;
-		width:50%;
-	}
-	
-}
-
-.screen-reader-text{
-    clip:rect(1px, 1px, 1px, 1px);
-    height:1px;
-    overflow:hidden;
-    position:absolute !important;
-    width:1px;
-    word-wrap:normal !important;
+li .page-numbers{
+	padding:0 1em;
 }
 
 .nav-subtitle{
@@ -400,11 +361,6 @@ embed, iframe, object {
 /* ********************
   [11] サイドバーの設定
 ******************** */
-
-.search-form{
-	padding:0.5em;
-	position: relative;
-}
 
 @media (min-width: 721px){
 	.widget-title{
@@ -440,6 +396,20 @@ embed, iframe, object {
 	display:block;
 }
 
+.search-form{
+	padding:0.5em;
+	display:flex;
+	justify-content:center;
+}
+
+input[type="search"]{
+	border:1px solid #bbb;
+	border-radius:1em;
+	padding:0.5em;
+	margin:0 0.5em 0 0;
+	width:calc(100% - 4em);
+}
+
 /* ********************
   [12] footerの設定
 ******************** */
@@ -455,16 +425,6 @@ embed, iframe, object {
 /* ********************
   [13] その他の設定
 ******************** */
-
-input[type="search"]{
-	color: #666;
-	background: #fff;
-	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-	border: 1px solid #bbb;
-	border-radius: 4px;
-	padding:0.5em;
-	width:calc(100% - 4em);
-}
 
 .site-info{
 	padding:2em 1em;
