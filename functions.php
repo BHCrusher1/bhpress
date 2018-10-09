@@ -2,6 +2,7 @@
 add_theme_support( 'title-tag' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'bhpress-image', 1920, 1280, true );
 
 //サイドバーにウィジェット追加
 register_sidebar( array(

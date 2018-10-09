@@ -231,6 +231,12 @@ article,section{
   [7] メインコンテンツ本体の設定
 ******************** */
 
+.single-featured-image-header{
+	display:flex;
+	justify-content:center;
+	margin-bottom:0.5em;
+}
+
 .entry-content{
 	padding:0 0.5em;
 }
