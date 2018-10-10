@@ -1,3 +1,7 @@
+<?php
+    $share_url   = get_permalink();
+    $share_title = get_the_title();
+?>
 <nav>
 <ul class="snsbutton">
     <li class="share-facebook"><a href="https://www.facebook.com/share.php?u=<?php echo $share_url;?>" target="_blank" rel="noopener">Facebook</a></li>
