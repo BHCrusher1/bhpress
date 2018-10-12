@@ -9,7 +9,7 @@ if ( is_single() ) {
 }
 ?>
 <div class="entry-meta">
-<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><time><?php echo get_the_date(); ?></time></a>
+<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' ?><time><?php echo get_the_date(); ?></time></a>
 <span class="cat-links"><i class="fas fa-folder"></i>：<?php the_category(', '); ?></span>
 </div> <!-- .entry-meta -->
 </header>

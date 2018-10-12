@@ -6,7 +6,7 @@
 if ( has_post_thumbnail() ) {
 	echo '<div class="single-featured-image-header">';
 	echo '<div>';
-	echo the_post_thumbnail();
+	echo the_post_thumbnail( 'large' );
 	echo '</div>';
 	echo '</div><!-- .single-featured-image-header -->';
 }

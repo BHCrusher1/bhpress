@@ -282,6 +282,11 @@ embed, iframe, object {
 	width:100%;
 }
 
+.attachment-thumbnail{
+	width:75px;
+	height:75px;
+}
+
 .related-meta{
 	display: flex;
 	flex-direction:column;
@@ -329,6 +334,21 @@ embed, iframe, object {
 .comments-pagination{
 	font-weight:800;
 	text-align:center;
+}
+
+ul.pn-post{
+	display:flex;
+	justify-content:space-between;
+	list-style:none;
+	padding:0;
+}
+
+.pn-post .prev{
+	margin:0 0.25em 0 0;
+}
+
+.pn-post .next{
+	margin:0 0 0 0.25em;
 }
 
 ul.page-numbers{
