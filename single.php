@@ -8,23 +8,23 @@
 <?php get_template_part('page/sns'); ?>
 <?php
 if ( has_post_thumbnail() ) {
-    echo '<div class="single-featured-image-header">';
-    echo '<div>';
-    echo the_post_thumbnail();
-    echo '</div>';
-    echo '</div><!-- .single-featured-image-header -->';
+	echo '<div class="single-featured-image-header">';
+	echo '<div>';
+	echo the_post_thumbnail();
+	echo '</div>';
+	echo '</div><!-- .single-featured-image-header -->';
 }
 ?>
 <hr>
 <div class="entry-content">
-    <?php the_content(); ?>
+	<?php the_content(); ?>
 </div><!-- .entry-content -->
 <hr>
 <?php get_template_part('page/sns'); ?>
 <?php endwhile; endif; ?>
 <?php if ( is_single() ) {
-    get_template_part('page/content-related');
-	}
+	get_template_part('page/content-related');
+}
 ?>
 </article>
 </main>

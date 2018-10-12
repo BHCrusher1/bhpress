@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <div class="wrap">
 <header class="page-header">
-    <?php if ( have_posts() ) : ?>
-        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-    <?php else : ?>
-        <h1 class="page-title">何も見つかりませんでした</h1>
-    <?php endif; ?>
+	<?php if ( have_posts() ) : ?>
+		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+	<?php else : ?>
+		<h1 class="page-title">何も見つかりませんでした</h1>
+	<?php endif; ?>
 </header><!-- .page-header -->
 
 <div id="primary">
