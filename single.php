@@ -17,10 +17,7 @@ if ( has_post_thumbnail() ) {
 ?>
 <hr>
 <div class="entry-content">
-    <?php
-    if ( is_single() ) {the_content();}
-    else {the_content(続きを読む);}
-    ?>
+    <?php the_content(); ?>
 </div><!-- .entry-content -->
 <hr>
 <?php get_template_part('page/sns'); ?>
