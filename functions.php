@@ -14,7 +14,7 @@ register_sidebar( array(
 	'after_title'   => '</h2>',
 ) );
 
-function the_posts_pagination_list( $args = array() ) {
+function bhpress_pagination_list( $args = array() ) {
 	$navigation = '';
  
 	// Don't print empty markup if there's only one page.

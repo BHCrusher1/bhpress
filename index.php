@@ -3,7 +3,7 @@
 <div id="primary">
 <main>
 <?php get_template_part('page/content'); ?>
-<?php the_posts_pagination_list(); ?>
+<?php bhpress_pagination_list(); ?>
 </main>
 </div><!-- #primary -->
 <?php get_sidebar(); ?> <!-- サイドバー -->
