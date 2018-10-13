@@ -377,30 +377,15 @@ ul.pn-post{
 	}
 }
 
-ul.page-numbers{
+.page-numbers{
 	display:flex;
 	justify-content:center;
 	list-style:none;
 	padding:0;
 }
 
-li .page-numbers{
+.page-numbers li{
 	padding:0 1em;
-}
-
-.nav-subtitle{
-	background: transparent;
-	color:#767676;
-	display:block;
-	font-size:11px;
-	font-size:0.6875rem;
-	letter-spacing:0.1818em;
-	margin-bottom:1em;
-	text-transform:uppercase;
-}
-
-.nav-links .nav-title{
-	position:relative;
 }
 
 /* ********************

@@ -14,7 +14,7 @@
 		if ( have_posts() ) :
 			get_template_part( 'page/content' );
 
-			the_posts_pagination_list();
+			bhpress_pagination_list();
 
 		else : ?>
 			<p>検索キーワードに一致するものが見つかりませんでした。 別のキーワードで試してみてください。</p>
