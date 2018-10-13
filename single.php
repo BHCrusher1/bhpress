@@ -21,6 +21,8 @@ if ( has_post_thumbnail() ) {
 </div><!-- .entry-content -->
 <hr>
 <?php get_template_part('page/sns'); ?>
+<?php get_template_part('page/post-navigation'); ?>
+<hr>
 <?php endwhile; endif; ?>
 <?php if ( is_single() ) {
 	get_template_part('page/content-related');

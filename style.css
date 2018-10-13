@@ -331,24 +331,47 @@ embed, iframe, object {
 }
 
 .pagination,
-.comments-pagination{
+.comments-pagination,
+ul.pn-post{
 	font-weight:800;
 	text-align:center;
 }
 
-ul.pn-post{
-	display:flex;
-	justify-content:space-between;
-	list-style:none;
-	padding:0;
+.post-navigation{
+	margin:0 0.5em;
 }
 
-.pn-post .prev{
-	margin:0 0.25em 0 0;
+@media (min-width: 721px){
+	.nav-links{
+		list-style:none;
+		padding:0;
+		display:flex;
+	}
+	.nav-previous{
+		width:50%;
+		display:block;
+		text-align:left;
+	}
+	.nav-next{
+		width:50%;
+		display:block;
+		text-align:right;
+	}
 }
 
-.pn-post .next{
-	margin:0 0 0 0.25em;
+@media (max-width: 720px){
+	.nav-links{
+		list-style:none;
+		padding:0;
+	}
+	.nav-previous{
+		display:block;
+		text-align:left;
+	}
+	.nav-next{
+		display:block;
+		text-align:right;
+	}
 }
 
 ul.page-numbers{
