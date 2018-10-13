@@ -159,6 +159,9 @@ embed, iframe, object {
 	
 }
 
+#primary article hr{
+	margin:0 0.5em;
+}
 
 /* ********************
   [5] 記事内ヘッダの設定
@@ -193,19 +196,23 @@ embed, iframe, object {
 /* ********************
   [6] SNSボタンの設定
 ******************** */
+.sns-navigation{
+	margin:0 0.5em;
+}
 
-.snsbutton{
+.sns-button{
 	list-style:none;
-	line-height:2em;
-	padding:1em 0.5em;
+	padding:0;
 	margin:0;
 	display:flex;
 	justify-content:space-between;
+	line-height:2em;
 }
-.snsbutton li{
+.sns-button li{
 	width:30%;
+	margin:1em 0;
 }
-.snsbutton a{
+.sns-button a{
 	text-align:center;
 	border-radius:1em;
 	display:block;
@@ -213,35 +220,31 @@ embed, iframe, object {
 	text-decoration:none;
 }
 
-.snsbutton li.share-twitter a{
+.sns-button li.share-twitter a{
 	background:#1DA1F2;
 	box-shadow:0 4px 2px rgba(29, 161, 242,.2);
 }
 
-.snsbutton li.share-twitter a:hover{
+.sns-button li.share-twitter a:hover{
 	background:#4892cb;
 }
 
-.snsbutton li.share-facebook a{
+.sns-button li.share-facebook a{
 	background:#4267b2;
 	box-shadow:0 4px 2px rgba(66, 103, 178,.2)
 }
 
-.snsbutton li.share-facebook a:hover{
+.sns-button li.share-facebook a:hover{
 	background:#365899;
 }
 
-.snsbutton li.share-line a{
+.sns-button li.share-line a{
 	background:#1dcd00;
 	box-shadow:0 4px 2px rgba(29, 205, 0,.2)
 }
 
-.snsbutton li.share-line a:hover{
+.sns-button li.share-line a:hover{
 	background:#2bd92b;
-}
-
-#primary article hr{
-	margin:0 0.5em;
 }
 
 /* ********************
