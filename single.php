@@ -24,10 +24,7 @@ if ( has_post_thumbnail() ) {
 <?php get_template_part('page/post-navigation'); ?>
 <hr>
 <?php endwhile; endif; ?>
-<?php if ( is_single() ) {
-	get_template_part('page/content-related');
-}
-?>
+<?php get_template_part('page/content-related'); ?>
 </article>
 </main>
 </div><!-- #primary -->
