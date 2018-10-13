@@ -44,6 +44,7 @@ function bhpress_pagination_list( $args = array() ) {
 	echo $navigation;
 }
 
+// 絵文字表示の削除
 function disable_emoji() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -54,3 +55,21 @@ function disable_emoji() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 }
 add_action( 'init', 'disable_emoji' );
+
+// RSSフィードを削除 link rel="alternate" type="application/rss+xml"
+remove_action('wp_head','feed_links',2);
+remove_action('wp_head','feed_links_extra',3);
+// EditURLを削除 link rel="EditURI" type="application/rsd+xml" title="RSD"
+remove_action('wp_head', 'rsd_link');
+// wlwmanifestを削除 link rel="wlwmanifest" type="application/wlwmanifest+xml"
+remove_action('wp_head','wlwmanifest_link');
+// stortlinkを削除 <link rel='shortlink'
+remove_action('wp_head', 'wp_shortlink_wp_head');
+// WPバージョン表記の削除 meta name="generator"
+remove_action('wp_head','wp_generator');
+// 謎のインラインスタイルを削除 <style type="text/css">.recentcomments a
+function remove_recent_comments_style() {
+	global $wp_widget_factory;
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+}
+add_action( 'widgets_init', 'remove_recent_comments_style' );
