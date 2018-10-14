@@ -258,7 +258,22 @@ embed, iframe, object {
 }
 
 .entry-content{
-	padding:0 0.5em;
+	margin:0 0.5em;
+}
+
+.entry-excerpt{
+	display:flex;
+}
+
+.entry-summary{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	margin:0 0.5em;
+}
+
+.no-thumbnail{
+	margin-left:calc(75px + 1em);
 }
 
 /* ********************
@@ -266,7 +281,7 @@ embed, iframe, object {
 ******************** */
 
 .related{
-	padding:0 0.5em;
+	margin:0 0.5em;
 }
 
 .related ul {
@@ -288,6 +303,7 @@ embed, iframe, object {
 .attachment-thumbnail{
 	width:75px;
 	height:75px;
+	margin: auto 0.5em;
 }
 
 .related-meta{
@@ -458,8 +474,4 @@ input[type="search"]{
 
 .site-info{
 	padding:2em 1em;
-}
-
-.entry-summary{
-	padding:0.5em;
 }

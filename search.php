@@ -12,7 +12,7 @@
 <main>
 <?php
 		if ( have_posts() ) :
-			get_template_part( 'page/content' );
+			get_template_part( 'page/content-excerpt' );
 
 			bhpress_pagination_list();
 

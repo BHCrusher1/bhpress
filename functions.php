@@ -44,6 +44,12 @@ function bhpress_pagination_list( $args = array() ) {
 	echo $navigation;
 }
 
+// the_excerptで続きを読むを表示
+function new_excerpt_more( $more ) {
+	return ' <p><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">続きを読む</a></p>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
 // 絵文字表示の削除
 function disable_emoji() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
