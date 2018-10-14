@@ -168,7 +168,7 @@ embed, iframe, object {
 ******************** */
 @media (min-width: 721px){
 	.entry-header{
-		padding:0.5em;
+		padding-bottom:0.5em;
 		background-color:#BBDEFB;
 		border-top-left-radius:1rem;
 		border-top-right-radius:1rem;
@@ -177,9 +177,18 @@ embed, iframe, object {
 
 @media (max-width: 720px){
 	.entry-header{
-		padding:0.5em;
+		padding-bottom:0.5em;
 		background-color:#BBDEFB;
 	}
+}
+
+.entry-title{
+	font-size:26px;
+	font-size:1.625rem;
+	margin:1em 0 1em 1rem;
+}
+h2.entry-title,h3.entry-title{
+	font-weight:normal;
 }
 
 .entry-title,.entry-meta{
@@ -187,8 +196,9 @@ embed, iframe, object {
 }
 
 .entry-meta{
-	margin:0 0 0 1em;
+	margin:0 0 0 1rem;
 }
+
 .entry-meta .cat-links{
 	margin:0 0 0 0.5em;
 }
@@ -314,7 +324,7 @@ embed, iframe, object {
 
 .related h3,.related time{
 	font-size:100%;
-	margin:0 0 0 0.5em;
+	margin:0;
 }
 
 /* ********************
