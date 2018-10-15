@@ -3,13 +3,12 @@
 <?php get_template_part('page/content-header'); ?>
 <div class="entry-excerpt">
 <?php the_post_thumbnail('thumbnail'); ?>
-<?php
-if ( has_post_thumbnail() ) {
-	echo '<div class="entry-summary">';
-	the_excerpt();
-}else{
-	echo '<div class="entry-summary no-thumbnail">';
-	the_excerpt();} ?>
+<?php if ( has_post_thumbnail() ) : ?>
+	<div class="entry-summary">
+<?php else : ?>
+	<div class="entry-summary no-thumbnail">
+<?php endif; ?>
+<?php the_excerpt(); ?>
 </div><!-- .entry-summary -->
 </div> <!-- entry-content -->
 </article><!-- #post-## -->
