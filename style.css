@@ -266,6 +266,7 @@ h2.entry-title,h3.entry-title{
 .sns-button li.share-twitter a{
 	background:#1DA1F2;
 	box-shadow:0 4px 2px rgba(29, 161, 242,.2);
+	transition: .4s;
 }
 
 .sns-button li.share-twitter a:hover{
@@ -274,7 +275,8 @@ h2.entry-title,h3.entry-title{
 
 .sns-button li.share-facebook a{
 	background:#4267b2;
-	box-shadow:0 4px 2px rgba(66, 103, 178,.2)
+	box-shadow:0 4px 2px rgba(66, 103, 178,.2);
+    transition: .4s;
 }
 
 .sns-button li.share-facebook a:hover{
@@ -283,7 +285,8 @@ h2.entry-title,h3.entry-title{
 
 .sns-button li.share-line a{
 	background:#1dcd00;
-	box-shadow:0 4px 2px rgba(29, 205, 0,.2)
+	box-shadow:0 4px 2px rgba(29, 205, 0,.2);
+    transition: .4s;
 }
 
 .sns-button li.share-line a:hover{
@@ -364,14 +367,61 @@ h2.entry-title,h3.entry-title{
   [9] コメント欄の設定
 ******************** */
 
-#comments{
-	background-color:#FFF;
-	padding:0.5em;
-	margin:2em 0;
-	border-radius:1em;
+@media (min-width:426px){
+	#comments{
+		background-color:#FFF;
+		padding:0.5em;
+		margin:2em 0;
+		border-radius:1em;
+	}
+	#comments input[type="text"],
+	#comments input[type="email"],
+	#comments input[type="url"],
+	#comments textarea{
+		border:1px solid #bbb;
+		border-radius:1em;
+		padding:0.5em;
+		margin:0 0.5em 0 0;
+		width:calc(100% - 1em - 2px);
+	}
 }
 
-/* ********************
+@media (max-width:425px){
+	#comments{
+		background-color:#FFF;
+		padding:0.5em;
+		margin:2em 0;
+	}
+	#comments input[type="text"],
+	#comments input[type="email"],
+	#comments input[type="url"],
+	#comments textarea{
+		border:1px solid #bbb;
+		padding:0.5em;
+		margin:0 0.5em 0 0;
+		width:calc(100% - 1em - 2px);
+	}
+}
+
+#comments ol,#comments ul{
+	padding-left:2em;
+}
+
+.submit{
+    display: inline-block;
+    padding: 0.3em 1em;
+	text-decoration: none;
+	background:#FFF;
+    color:#E91E63;
+    border: solid 2px #E91E63;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.submit:hover{
+    background:#E91E63;
+    color:#FFF;
+}/* ********************
   [10] 前後の記事ナビバーの設定
 ******************** */
 
