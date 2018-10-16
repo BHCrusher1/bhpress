@@ -8,6 +8,7 @@
 		?>
 	</header><!-- .page-header -->
 <?php endif; ?>
+<?php breadcrumb(); ?>
 <div id="primary">
 <main>
 <?php if ( have_posts() ) :

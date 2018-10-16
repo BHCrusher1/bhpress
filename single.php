@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <div class="wrap">
+<?php breadcrumb(); ?>
 <div id="primary">
 <main>
 <?php while ( have_posts() ) : the_post();

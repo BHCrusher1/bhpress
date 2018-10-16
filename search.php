@@ -7,7 +7,7 @@
 	<h1 class="page-title">何も見つかりませんでした</h1>
 <?php endif; ?>
 </header><!-- .page-header -->
-
+<?php breadcrumb(); ?>
 <div id="primary">
 <main>
 <?php if ( have_posts() ) {

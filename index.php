@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 <div class="wrap">
+<?php if(is_home()):?>
+    <nav>
+    <ol id="breadcrumb" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><i class="fas fa-home"></i><a itemprop="item" href="<?php esc_url( home_url( '/' ) );?>" class="home"><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
+    </ol>
+    </nav>
+<?php endif;?>
 <div id="primary">
 <main>
 <?php if ( have_posts() ) :
