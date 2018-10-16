@@ -27,7 +27,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 body{
-	background-color:#D7CCC8;
+	background-color:#F8E3BB;
 	padding:0px;
 	margin:0px;
 	line-height:1.25;
@@ -68,24 +68,25 @@ body{
 ******************** */
 
 a{
-	color:#5C6BC0;
+	color:#00369C;
 	word-break: break-all;
+	transition: .4s;
 }
 
 a:link{
-	color:#5C6BC0;
+	color:#00369C;
 }
 
 a:visited{
-	color:#5C6BC0;
+	color:#00369C;
 }
 
 a:hover{
-	color:#1A237E;
+	color:#9C6500;
 }
 
 a:active{
-	color:#5C6BC0;
+	color:#002588;
 }
 
 img{
@@ -186,7 +187,11 @@ embed, iframe, object {
 }
 
 #breadcrumb,#breadcrumb a{
-	color:#424242
+	color:#616161;
+}
+
+#breadcrumb a:hover{
+	color:#212121;
 }
 
 #breadcrumb li{
@@ -202,7 +207,7 @@ embed, iframe, object {
 @media (min-width:426px){
 	.entry-header{
 		padding-bottom:0.5em;
-		background-color:#BBDEFB;
+		background-color:#BBD0F8;
 		border-top-left-radius:1rem;
 		border-top-right-radius:1rem;
 	}
@@ -211,7 +216,7 @@ embed, iframe, object {
 @media (max-width:425px){
 	.entry-header{
 		padding-bottom:0.5em;
-		background-color:#BBDEFB;
+		background-color:#BBD0F8;
 	}
 }
 
