@@ -9,7 +9,7 @@
 <?php if ( has_post_thumbnail() ) : ?>
 	<div class="single-featured-image-header"><div>
 	<?php the_post_thumbnail( 'large' ); ?>
-	</div></div><!-- .single-featured-image-header -->';
+	</div></div><!-- .single-featured-image-header -->
 <?php endif; ?>
 <hr>
 <div class="entry-content">
