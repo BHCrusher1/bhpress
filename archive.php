@@ -10,8 +10,14 @@
 <?php endif; ?>
 <div id="primary">
 <main>
-<?php get_template_part('page/content'); ?>
-<?php the_posts_pagination_list(); ?>
+<?php if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
+		get_template_part('page/content');
+    endwhile;
+    bhpress_pagination_list();
+else : echo '<p>投稿が見つかりませんでした。</p>';
+endif; 
+?>
 </main>
 </div><!-- #primary -->
 <?php get_sidebar(); ?> <!-- サイドバー -->
