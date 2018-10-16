@@ -46,10 +46,17 @@ body{
 	}
 }
 
-@media (max-width:768px){
+@media (min-width:426px) and (max-width:768px){
+	.wrap{
+		margin:0 3%;
+		max-width:768px;
+	}
+}
+
+@media (max-width:425px){
 	.wrap{
 		margin:auto;
-		max-width:768px;
+		max-width:425px;
 	}
 }
 
@@ -141,7 +148,21 @@ embed, iframe, object {
 	}
 }
 
-@media (max-width:768px){
+@media (min-width:426px) and (max-width:768px){
+	#primary{
+		width:100%;
+	}
+	#secondary{
+		width:100%;
+	}
+	article,section{
+		background-color:#FFF;
+		margin:1em 0;
+		border-radius:1rem;
+	}
+}
+
+@media (max-width:425px){
 	#primary{
 		width:100%;
 	}
@@ -152,7 +173,6 @@ embed, iframe, object {
 		background-color:#FFF;
 		margin:1em 0;
 	}
-	
 }
 
 #primary article hr{
@@ -179,7 +199,7 @@ embed, iframe, object {
 /* ********************
   [5] 記事内ヘッダの設定
 ******************** */
-@media (min-width:769px){
+@media (min-width:426px){
 	.entry-header{
 		padding-bottom:0.5em;
 		background-color:#BBDEFB;
@@ -188,7 +208,7 @@ embed, iframe, object {
 	}
 }
 
-@media (max-width:768px){
+@media (max-width:425px){
 	.entry-header{
 		padding-bottom:0.5em;
 		background-color:#BBDEFB;
@@ -355,7 +375,7 @@ h2.entry-title,h3.entry-title{
   [10] 前後の記事ナビバーの設定
 ******************** */
 
-@media (min-width:769px){
+@media (min-width:426px){
 	.pagination{
 		background-color:#FFF;
 		padding:0.5em;
@@ -364,7 +384,7 @@ h2.entry-title,h3.entry-title{
 	}
 }
 
-@media (max-width:768px){
+@media (max-width:425px){
 	.pagination{
 		background-color:#FFF;
 		padding:0.5em;
@@ -431,7 +451,7 @@ ul.pn-post{
   [11] サイドバーの設定
 ******************** */
 
-@media (min-width:769px){
+@media (min-width:426px){
 	.widget-title{
 		padding:1em 0 1em 0.5em;
 		margin:0;
@@ -441,7 +461,7 @@ ul.pn-post{
 	}
 }
 
-@media (max-width:768px){
+@media (max-width:425px){
 	.widget-title{
 		padding:1em 0 1em 0.5em;
 		margin:0;
