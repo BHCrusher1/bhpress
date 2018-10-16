@@ -14,7 +14,7 @@ $posts_number = 5; // 表示したい件数を指定
 $args = array(
 	'post__not_in'=>array($post->ID), // 現在のページの投稿を除外
 	'category__in'=>$category_ID, // 現在の投稿のカテゴリーの関連記事を取得
-	'orderby'=>'date', // ランダムに並べる
+	'orderby'=>'date', // 日付順に並べる
 	'posts_per_page'=>$posts_number, // 表示する件数の指定
 );
 $wp_query = new WP_Query($args);
@@ -34,5 +34,6 @@ if($wp_query->have_posts()){
 ?>
 	<p>同じカテゴリの記事がありません・・・</p>
 	<?php } ?>
+<?php wp_reset_query() ?>
 </ul>
 </footer>

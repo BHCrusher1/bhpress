@@ -18,6 +18,11 @@ if ( has_post_thumbnail() ) {
 	if ( is_single() ) {the_content();}
 	else {the_content( '続きを読む ');}
 ?>
+</div><!-- .entry-content -->
 <hr>
-<?php get_template_part('page/sns'); ?>
+<?php get_template_part('page/sns');
+if ( is_single() ) {
+	get_template_part('page/post-navigation');
+	echo '<hr>';
+	get_template_part('page/content-related');} ?>
 </article>
