@@ -8,8 +8,7 @@
 <?php endif; ?>
 <link rel="preload" href="<?php echo get_stylesheet_uri(); ?>" as="style">
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<!-- ここからwp_head -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"><!-- ここからwp_head -->
 <?php wp_head(); ?>
 <!-- wp_headここまで -->
 </head>
