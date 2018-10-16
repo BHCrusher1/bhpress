@@ -10,9 +10,8 @@ if ( has_post_thumbnail() ) {
 		the_post_thumbnail();
 	}
 	echo '</div></div><!-- .single-featured-image-header -->';
-};
+} else { echo '<hr>'; }
 ?>
-<hr>
 <div class="entry-content">
 <?php
 	if ( is_single() ) {the_content();}
