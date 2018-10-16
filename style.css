@@ -34,7 +34,7 @@ body{
 	font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",YuGothic,"ヒラギノ角ゴ ProN W3",Hiragino Kaku Gothic ProN,Arial,"メイリオ",Meiryo,sans-serif;
 }
 
-@media (min-width: 721px){
+@media (min-width:769px){
 	.wrap{
 		margin:auto;
 		max-width:1280px;
@@ -46,7 +46,7 @@ body{
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	.wrap{
 		margin:auto;
 		max-width:720px;
@@ -123,7 +123,7 @@ embed, iframe, object {
   [4] メインコンテンツ全体の設定
 ******************** */
 
-@media (min-width: 721px){
+@media (min-width:769px){
 	#primary,#secondary{
 		margin:6px;
 	}
@@ -142,7 +142,7 @@ embed, iframe, object {
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	#primary,#secondary{
 		margin:0;
 	}
@@ -166,7 +166,7 @@ embed, iframe, object {
 /* ********************
   [5] 記事内ヘッダの設定
 ******************** */
-@media (min-width: 721px){
+@media (min-width:769px){
 	.entry-header{
 		padding-bottom:0.5em;
 		background-color:#BBDEFB;
@@ -175,7 +175,7 @@ embed, iframe, object {
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	.entry-header{
 		padding-bottom:0.5em;
 		background-color:#BBDEFB;
@@ -342,7 +342,7 @@ h2.entry-title,h3.entry-title{
   [10] 前後の記事ナビバーの設定
 ******************** */
 
-@media (min-width: 721px){
+@media (min-width:769px){
 	.pagination{
 		background-color:#FFF;
 		padding:0.5em;
@@ -351,7 +351,7 @@ h2.entry-title,h3.entry-title{
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	.pagination{
 		background-color:#FFF;
 		padding:0.5em;
@@ -370,7 +370,7 @@ ul.pn-post{
 	margin:0 0.5em;
 }
 
-@media (min-width: 721px){
+@media (min-width:769px){
 	.nav-links{
 		list-style:none;
 		padding:0;
@@ -388,7 +388,7 @@ ul.pn-post{
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	.nav-links{
 		list-style:none;
 		padding:0;
@@ -418,7 +418,7 @@ ul.pn-post{
   [11] サイドバーの設定
 ******************** */
 
-@media (min-width: 721px){
+@media (min-width:769px){
 	.widget-title{
 		padding:1em 0 1em 0.5em;
 		margin:0;
@@ -428,7 +428,7 @@ ul.pn-post{
 	}
 }
 
-@media (max-width: 720px){
+@media (max-width:768px){
 	.widget-title{
 		padding:1em 0 1em 0.5em;
 		margin:0;
