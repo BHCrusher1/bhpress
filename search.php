@@ -11,7 +11,9 @@
 <div id="primary">
 <main>
 <?php if ( have_posts() ) {
-	get_template_part( 'page/content-excerpt' );
+	while ( have_posts() ) : the_post();
+		get_template_part( 'page/content-excerpt' );
+	endwhile;
 	bhpress_pagination_list();
 } else {
 	echo '<p>検索キーワードに一致するものが見つかりませんでした。 別のキーワードで試してみてください。</p>';
