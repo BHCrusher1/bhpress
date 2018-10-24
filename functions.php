@@ -4,6 +4,10 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 900, 556, true );
 
+// oEmbedのカスタマイズ
+remove_action( 'embed_head', 'print_embed_styles' );
+remove_action( 'embed_footer', 'print_embed_sharing_dialog' );
+
 //サイドバーにウィジェット追加
 register_sidebar( array(
 	'name'          => __( 'Blog Sidebar' ),

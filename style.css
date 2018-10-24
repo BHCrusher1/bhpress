@@ -4,7 +4,7 @@ theme Name: BHpress
 Theme URL: https://bhcrusher1.net
 Author: BHCrusher1
 Author URI: https://twitter.com/BHCrusher1
-Version: 1.0.1.2
+Version: 1.0.2
 Tags: 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -134,12 +134,14 @@ embed, iframe, object {
 @media (min-width:769px){
 	#primary{
 		float:left;
-		width:calc(70.72% - 6px);
-		margin-right:6px;
+		width:calc(70.72% - 10px);
+		margin-right:4px;
+		margin-left:6px;
 	}
 	#secondary{
 		float:right;
-		width:calc(29.28% - 6px);
+		width:calc(29.28% - 10px);
+		margin-right:4px;
 		margin-left:6px;
 	}
 	article{
@@ -354,6 +356,11 @@ a.more-link{
 a.more-link:hover{
 	background:#E91E63;
 	color:#FFF;
+}
+
+.wp-embedded-content {
+	max-width:100%;
+	height:calc(100px + 1em);
 }
 
 /* ********************
