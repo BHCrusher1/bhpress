@@ -9,7 +9,7 @@ if ( ! headers_sent() ) {
 	<title><?php echo wp_get_document_title(); ?></title>
 	<?php do_action( 'embed_head' ); ?>
 	<style>
-		.wp-embed{display:flex;align-items:center;text-decoration:none;background-color:#FFF;color:#00369C;padding:0.5em;border-radius:1em;box-shadow:0 2px 5px rgba(0,0,0,0.26);}
+		.wp-embed{display:flex;align-items:center;text-decoration:none;background-color:#FFF;color:#00369C;padding:0.5em;border-radius:1em;border:solid 2px #9E9E9E}
 		.wp-embed-featured-image img{vertical-align:bottom;width:100px;max-width:100%;height:auto;}
 		.wp-embed-heading{padding:0.5em;}
 	</style>
