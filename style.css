@@ -4,7 +4,7 @@ theme Name: BHpress
 Theme URL: https://bhcrusher1.net
 Author: BHCrusher1
 Author URI: https://twitter.com/BHCrusher1
-Version: 1.0.1
+Version: 1.0.1.2
 Tags: 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -331,6 +331,31 @@ h2.entry-title,h3.entry-title{
 	margin-left:calc(75px + 1em);
 }
 
+.entry-content table{
+	border-collapse:collapse;
+}
+
+.entry-content table th,.entry-content table td{
+	border:1px #616161 solid;
+	padding:0.25em;
+}
+
+a.more-link{
+	display: inline-block;
+    padding: 0.5em 1em;
+	text-decoration: none;
+	background:#FFF;
+    color:#E91E63;
+    border: solid 2px #E91E63;
+    border-radius: 0.5em;
+    transition: .4s;
+}
+
+a.more-link:hover{
+	background:#E91E63;
+	color:#FFF;
+}
+
 /* ********************
   [8] 記事内フッダーの設定
 ******************** */
@@ -430,7 +455,9 @@ h2.entry-title,h3.entry-title{
 .submit:hover{
     background:#E91E63;
     color:#FFF;
-}/* ********************
+}
+
+/* ********************
   [10] 前後の記事ナビバーの設定
 ******************** */
 
