@@ -12,7 +12,7 @@ Template Name: サイドバー無し
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <header class="entry-header">
 <?php if(have_posts()): while(have_posts()):the_post();
-	if ( is_single() ) {
+	if ( is_single() or is_page() ) {
 		the_title( '<h1 class="entry-title">', '</h1>' );
 	} elseif ( is_front_page() && is_home() ) {
 		the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );

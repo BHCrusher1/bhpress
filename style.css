@@ -366,6 +366,27 @@ a.more-link:hover{
 	height:calc(104px + 1em);
 }
 
+.wp-caption, .gallery-caption {
+	margin:0;
+	max-width:100%;
+}
+
+img.aligncenter{
+    display:block;
+    margin:0 auto;
+}
+
+img.alignright{
+	display:block;
+	margin-left:auto;
+	margin-right:0;
+}
+img.alignleft{
+	display:block;
+	margin-left:0;
+	margin-right:auto;
+}
+
 /* ********************
   [8] 記事内フッダーの設定
 ******************** */
