@@ -607,10 +607,6 @@ ul.pn-post{
 	word-wrap:break-word
 }
 
-#secondary section ul li a,#secondary section ol li a{
-	display:block;
-}
-
 .search-form{
 	padding:0.5em;
 	display:flex;
