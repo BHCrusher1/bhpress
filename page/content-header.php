@@ -9,7 +9,7 @@ if ( is_single() or is_page() ) {
 }
 if ( ! is_page() ) : ?>
 	<div class="entry-meta">
-	<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' ?><time><?php echo get_the_date(); ?></time></a>
+	<time class="post-date">公開日:<?php echo get_the_date(); ?></time><?php if ( get_the_date() != get_the_modified_date() ) {echo '<time class="modified-date">最終更新日:';the_modified_date();echo'</time>';} ?>
 	<span class="cat-links"><i class="fas fa-folder"></i>：<?php the_category(', '); ?></span>
 	</div> <!-- .entry-meta -->
 <?php endif; ?>

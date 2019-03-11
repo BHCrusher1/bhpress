@@ -3,7 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php add_action('wp_head', function() { ?>
+<?php add_action('wp_head', function() {?>
 <link rel="preload" href="<?php echo get_stylesheet_uri(); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"></noscript>
 <link rel="preload" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
