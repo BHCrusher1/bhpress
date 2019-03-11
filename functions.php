@@ -16,11 +16,6 @@ function bhpress_setup() {
 }
 add_action( 'after_setup_theme', 'bhpress_setup' );
 
-function replace_script_tag ( $tag ) {
-    return str_replace( "type='text/javascript'", 'defer', $tag );
-}
-add_filter( 'script_loader_tag', 'replace_script_tag' );
-
 // oEmbedのカスタマイズ
 remove_action( 'embed_head', 'print_embed_styles' );
 remove_action( 'embed_footer', 'print_embed_sharing_dialog' );
