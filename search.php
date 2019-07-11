@@ -10,7 +10,7 @@
 <?php breadcrumb(); ?>
 <div id="primary">
 <main>
-<?php if ( have_posts() ) {
+<?php if ( have_posts() ) { //検索ワードに一致するものがある場合
 	while ( have_posts() ) : the_post();
 		get_template_part( 'page/content-excerpt' );
 	endwhile;

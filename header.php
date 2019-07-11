@@ -22,9 +22,9 @@ function css_rel_preload_js() { //多用できるように関数化 ?>
 <body>
 <header id="masthead">
 <div class="wrap site-branding-text">
-<?php if ( is_front_page() ) : ?>
+<?php if ( is_front_page() ) : //フロントページ（トップページ）の場合 ?>
 	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-<?php else : ?>
+<?php else : //フロントページ以外の場合 ?>
 	<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 <?php endif; ?>
 
