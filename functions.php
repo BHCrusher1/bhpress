@@ -1,4 +1,26 @@
 <?php
+
+//cssの読み込み
+function add_stylesheet()
+{
+    wp_enqueue_style('bootstrap', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array(), null);
+    wp_enqueue_style('fontawesome', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null);
+    wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), date('YmdHi', filemtime(get_stylesheet_directory() . '/style.css')));
+}
+add_action('wp_enqueue_scripts', 'add_stylesheet');
+
+//スクリプトの読み込み
+function theme_name_scripts()
+{
+    //WP標準のjQueryの読み込みを止める
+    wp_deregister_script('jquery');
+    //スクリプトの読み込み
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
+    wp_enqueue_script('popper.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js', array('jquery'), null, true);
+    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('popper.js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'theme_name_scripts');
+
 add_theme_support('title-tag');
 add_theme_support('html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ));
 add_theme_support('post-thumbnails');
