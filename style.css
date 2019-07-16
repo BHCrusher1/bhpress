@@ -67,36 +67,13 @@ embed,iframe,object{
 ******************** */
 
 @media(min-width:769px){
-	#primary{
-		float:left;
-		width:calc(70.72% - 10px);
-		margin-right:4px;
-		margin-left:6px;
-	}
-	#secondary{
-		float:right;
-		width:calc(29.28% - 10px);
-		margin-right:4px;
-		margin-left:6px;
-	}
-	article{
-		background-color:#FFF;
-		margin-bottom:1em;
-		border-radius:1rem;
-	}
 	#no-sidebar{
 		width:100%;
 	}
 }
 
 @media(min-width:426px) and (max-width:768px){
-	#primary{
-		width:100%;
-	}
-	#secondary{
-		width:100%;
-	}
-	article,section{
+	section{
 		background-color:#FFF;
 		margin:1em 0;
 		border-radius:1rem;
@@ -104,13 +81,7 @@ embed,iframe,object{
 }
 
 @media(max-width:425px){
-	#primary{
-		width:100%;
-	}
-	#secondary{
-		width:100%;
-	}
-	article,section{
+	section{
 		background-color:#FFF;
 		margin:1em 0;
 	}
@@ -124,23 +95,10 @@ embed,iframe,object{
 	margin-bottom:1em;
 }
 
-#breadcrumb{
-	list-style:none;
-	padding:0;
-	margin:1em;
+.breadcrumb {
+	background-color: initial;
 }
 
-#breadcrumb,#breadcrumb a{
-	color:#616161;
-}
-
-#breadcrumb a:hover{
-	color:#212121;
-}
-
-#breadcrumb li{
-	display:inline-block;
-}
 #breadcrumb .fas{
 	margin:0 0.5em;
 }
@@ -148,39 +106,6 @@ embed,iframe,object{
 /* ********************
 	[5] 記事内ヘッダの設定
 ******************** */
-@media(min-width:426px){
-	.entry-header{
-		padding:1em;
-		background-color:#BBD0F8;
-		border-top-left-radius:1rem;
-		border-top-right-radius:1rem;
-	}
-}
-
-@media(max-width:425px){
-	.entry-header{
-		padding:1em;
-		background-color:#BBD0F8;
-	}
-}
-
-.entry-title{
-	font-size:26px;
-	font-size:1.625rem;
-	margin:0;
-	margin-right:1em;
-}
-h2.entry-title,h3.entry-title{
-	font-weight:normal;
-}
-
-.entry-title,.entry-meta{
-	display:inline-block;
-}
-
-.entry-meta time{
-	margin-right:1em;
-}
 
 /* ********************
 	[6] SNSボタンの設定
