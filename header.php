@@ -14,6 +14,8 @@
 <div id="page" class="site">
 	<header id="masthead" class="bg-white">
 
-		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+		<div class="container site-branding-container">
+			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+		</div><!-- .site-branding-container -->
 
 	</header><!-- #masthead -->

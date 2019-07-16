@@ -1,4 +1,4 @@
-<div class="container site-branding">
+<div class="py-2 site-branding">
 
 	<?php if (has_custom_logo()) : //カスタムロゴの有無を判定?>
 		<div class="site-logo"><?php the_custom_logo(); ?>
@@ -7,9 +7,9 @@
 	<?php $blog_info = get_bloginfo('name'); //サイトのタイトルを取得?>
 	<?php if (! empty($blog_info)) : //サイトのタイトルが存在する場合?>
 		<?php if (is_front_page() && is_home()) : //デフォルト設定の最新の投稿を表示になっている場合?>
-			<h1 class="h1 font-weight-bold site-title"><a class="text-dark"	href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+			<h1 class="h1 font-weight-bold d-inline site-title"><a class="text-dark"	href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 		<?php else : ?>
-			<p class="h1 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+			<p class="h1 font-weight-bold d-inline site-title"><a class="text-dark" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -17,7 +17,7 @@
     $description = get_bloginfo('description', 'display');
     if ($description || is_customize_preview()) :
         ?>
-		<p class="text-secondary site-description"><?php echo $description; ?></p>
+		<p class="text-secondary d-inline h5 site-description"><?php echo $description; ?></p>
 	<?php endif; ?>
 
 	<?php //以下twentyseventeenからコピペしたそのまま ?>
