@@ -12,7 +12,7 @@
 <body <?php body_class('min-vh-100'); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<header id="masthead" class="bg-white <?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
+	<header id="masthead" class="bg-white">
 
 		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 

@@ -26,6 +26,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	}
 }
 
+body{
+	background-color:#F8E3BB;
+}
+
 /* ********************
 	[2] HTML全体のタグ設定
 ******************** */
