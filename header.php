@@ -9,27 +9,11 @@
 	<!-- wp_headここまで -->
 </head>
 
-<body>
-	<header id="masthead">
-		<div class="wrap site-branding-text">
-			<?php if (is_front_page()) : //フロントページ（トップページ）の場合?>
-			<h1 class="site-title"><a
-					href="<?php echo esc_url(home_url('/')); ?>"
-					rel="home"><?php bloginfo('name'); ?></a>
-			</h1>
-			<?php else : //フロントページ以外の場合?>
-			<p class="site-title"><a
-					href="<?php echo esc_url(home_url('/')); ?>"
-					rel="home"><?php bloginfo('name'); ?></a></p>
-			<?php endif; ?>
+<body <?php body_class('min-vh-100'); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<header id="masthead" class="bg-white <?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
 
-			<?php
-$description = get_bloginfo('description', 'display');
+		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-if ($description || is_customize_preview()) :
-?>
-			<p class="site-description"><?php echo $description; ?>
-			</p>
-			<?php endif; ?>
-		</div><!-- .wrap .site-branding-text -->
 	</header><!-- #masthead -->
