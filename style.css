@@ -74,10 +74,6 @@ object {
   }
 }
 
-#secondary section {
-  margin-bottom: 1em;
-}
-
 .breadcrumb {
   background-color: initial;
 }
@@ -408,11 +404,6 @@ ul.pn-post {
 	[11] サイドバーの設定
 ******************** */
 
-.widget-title {
-  margin: 0;
-  background-color: #f8bbd0;
-}
-
 #secondary section ul,
 #secondary form {
   background-color: #fff;
@@ -420,17 +411,20 @@ ul.pn-post {
 
 #secondary section ul {
   list-style: none;
-  padding: 0 0.5em;
+  padding: 0;
   margin: 0;
   line-height: 2em;
 }
 
 #secondary section ul li,
 #secondary section ol li {
-  border-bottom: 1px solid #ddd;
   word-wrap: break-word;
 }
 
+#secondary section ul li + li,
+#secondary section ol li + li {
+  border-top: 1px solid #ddd;
+}
 .search-form {
   padding: 0.5em;
   display: flex;
