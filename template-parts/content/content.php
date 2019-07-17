@@ -27,9 +27,8 @@
 <?php
     get_template_part('template-parts/content/sns');
     if (is_single()) { //個別投稿のページを表示中
-        get_template_part('page/post-navigation'); //前後の記事
-        echo '<hr>';
-        get_template_part('page/content-related'); //同じカテゴリの記事
+        get_template_part('template-parts/content/post-navigation'); //前後の記事
+        get_template_part('template-parts/content/article-related'); //同じカテゴリの記事
     }
 ?>
 </article>

@@ -252,19 +252,8 @@ figure {
 	[8] 記事内フッダーの設定
 ******************** */
 
-.related {
-  margin: 0 0.5em;
-}
-
-.related ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.related ul li {
-  padding: 0.25em 0;
-  border-bottom: 1px solid #ddd;
+.related ul li + li {
+  border-top: 1px solid #ddd;
 }
 
 .related ul li a {
@@ -279,15 +268,7 @@ figure {
 }
 
 .related-meta {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-}
-
-.related h3,
-.related time {
-  font-size: 100%;
-  margin: 0;
 }
 
 /* ********************
@@ -377,10 +358,6 @@ figure {
 ul.pn-post {
   font-weight: 800;
   text-align: center;
-}
-
-.post-navigation {
-  margin: 0 0.5em;
 }
 
 @media (min-width: 769px) {
