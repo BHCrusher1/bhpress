@@ -93,57 +93,39 @@ object {
 /* ********************
 	[6] SNSボタンの設定
 ******************** */
-.sns-navigation {
-  margin: 0 0.5em;
-}
 
-.sns-button {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.sns {
   display: flex;
   justify-content: space-between;
-  line-height: 2em;
 }
-.sns-button li {
+.sns li {
   width: 30%;
-  margin: 1em 0;
 }
-.sns-button a {
-  text-align: center;
-  border-radius: 1em;
-  display: block;
-  color: #fff;
-  text-decoration: none;
+.sns a {
+  border-radius: 1.25rem;
 }
-
-.sns-button li.share-twitter a {
+.share-twitter {
   background: #1da1f2;
   box-shadow: 0 4px 2px rgba(29, 161, 242, 0.2);
   transition: 0.4s;
 }
-
-.sns-button li.share-twitter a:hover {
+.share-twitter:hover {
   background: #4892cb;
 }
-
-.sns-button li.share-facebook a {
+.share-facebook {
   background: #4267b2;
   box-shadow: 0 4px 2px rgba(66, 103, 178, 0.2);
   transition: 0.4s;
 }
-
-.sns-button li.share-facebook a:hover {
+.share-facebook:hover {
   background: #365899;
 }
-
-.sns-button li.share-line a {
+.share-line {
   background: #1dcd00;
   box-shadow: 0 4px 2px rgba(29, 205, 0, 0.2);
   transition: 0.4s;
 }
-
-.sns-button li.share-line a:hover {
+.share-line:hover {
   background: #2bd92b;
 }
 

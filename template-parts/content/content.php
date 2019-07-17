@@ -24,7 +24,7 @@
 ?>
     </div><!-- .entry-content -->
     <hr>
-    <?php get_template_part('page/sns');
+    <?php get_template_part('template-parts/content/sns');
 if (is_single()) {
     get_template_part('page/post-navigation'); //前後の記事
     echo '<hr>';
