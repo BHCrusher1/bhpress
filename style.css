@@ -74,25 +74,6 @@ object {
   }
 }
 
-@media (min-width: 426px) and (max-width: 768px) {
-  section {
-    background-color: #fff;
-    margin: 1em 0;
-    border-radius: 1rem;
-  }
-}
-
-@media (max-width: 425px) {
-  section {
-    background-color: #fff;
-    margin: 1em 0;
-  }
-}
-
-#primary article hr {
-  margin: 0 0.5em;
-}
-
 #secondary section {
   margin-bottom: 1em;
 }
@@ -464,32 +445,14 @@ ul.pn-post {
 	[11] サイドバーの設定
 ******************** */
 
-@media (min-width: 426px) {
-  .widget-title {
-    padding: 1em 0 1em 0.5em;
-    margin: 0;
-    background-color: #f8bbd0;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
-  #secondary section ul,
-  #secondary form {
-    background-color: #fff;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
+.widget-title {
+  margin: 0;
+  background-color: #f8bbd0;
 }
 
-@media (max-width: 425px) {
-  .widget-title {
-    padding: 1em 0 1em 0.5em;
-    margin: 0;
-    background-color: #f8bbd0;
-  }
-  #secondary section ul,
-  #secondary form {
-    background-color: #fff;
-  }
+#secondary section ul,
+#secondary form {
+  background-color: #fff;
 }
 
 #secondary section ul {

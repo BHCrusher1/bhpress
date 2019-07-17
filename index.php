@@ -29,7 +29,7 @@
                 ?>
             </main><!-- .site-main -->
         </section><!-- .content-area -->
-        <?php /*get_sidebar(); サイドバーを一時的に消す*/ ?> 
+        <?php get_sidebar(); ?> 
     </div><!-- .row -->
 </div><!-- .container -->
 <?php get_footer();
