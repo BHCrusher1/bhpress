@@ -12,7 +12,7 @@
 <body <?php body_class('min-vh-100'); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<header id="masthead" class="bg-white">
+	<header id="masthead" class="mb-3 bg-white">
 
 		<div class="container site-branding-container">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>

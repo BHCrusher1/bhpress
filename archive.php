@@ -1,27 +1,29 @@
 <?php get_header(); ?>
-<div class="wrap">
-	<?php if (have_posts()) : ?>
-	<header class="page-header">
-		<?php
-            the_archive_title('<h1 class="page-title">', '</h1>');
-            the_archive_description('<div class="taxonomy-description">', '</div>');
-        ?>
-	</header><!-- .page-header -->
-	<?php endif; ?>
+<div class="container">
 	<?php breadcrumb(); ?>
-	<div id="primary">
-		<main>
-			<?php if (have_posts()) :
-    while (have_posts()) : the_post();
-        get_template_part('page/content');
-    endwhile;
-    bhpress_pagination_list();
-else : echo '<p>投稿が見つかりませんでした。</p>';
-endif;
-?>
-		</main>
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-	<!-- サイドバー -->
-</div><!-- .wrap -->
+	<div class="row">
+		<section id="primary" class="col-md-9 content-area">
+			<main id="main" class="site-main">
+			<?php
+                if (have_posts()) {
+                    echo '<header class="page-header">';
+                    the_archive_title('<h1 class="h2 page-title">', '</h1>');
+                    echo '</header><!-- .page-header -->';
+                    //コンテンツがあればループ
+                    while (have_posts()) {
+                        the_post();
+                        get_template_part('template-parts/content/content', 'excerpt');
+                    }
+                    //前後ページのナビゲーション
+                    bhpress_pagination_list();
+                } else {
+                    //コンテンツがない場合は"投稿が見つかりません"というテンプレートを含めます
+                    get_template_part('template-parts/content/content', 'none');
+                }
+            ?>
+			</main><!-- .site-main -->
+		</section><!-- .content-area -->
+		<?php get_sidebar(); ?>
+	</div><!-- .row -->
+</div><!-- .container -->
 <?php get_footer();
