@@ -231,6 +231,10 @@ a.more-link:hover {
 	[9] コメント欄の設定
 ******************** */
 
+h3#reply-title {
+  font-size: 1.5rem;
+}
+
 #comments input[type="text"],
 #comments input[type="email"],
 #comments input[type="url"],
@@ -279,21 +283,10 @@ p.form-submit {
 	[10] 前後の記事ナビバーの設定
 ******************** */
 
-@media (min-width: 426px) {
-  .pagination {
-    background-color: #fff;
-    padding: 0.5em;
-    margin: 1em 0;
-    border-radius: 1em;
-  }
-}
-
-@media (max-width: 425px) {
-  .pagination {
-    background-color: #fff;
-    padding: 0.5em;
-    margin: 1em 0;
-  }
+.pagination {
+  background-color: #fff;
+  padding: 0.5em;
+  margin: 1em 0;
 }
 
 .pagination,
@@ -303,44 +296,12 @@ ul.pn-post {
   text-align: center;
 }
 
-@media (min-width: 769px) {
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-  }
-  .nav-previous {
-    width: 50%;
-    display: block;
-    text-align: left;
-  }
-  .nav-next {
-    width: 50%;
-    display: block;
-    text-align: right;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    list-style: none;
-    padding: 0;
-  }
-  .nav-previous {
-    display: block;
-    text-align: left;
-  }
-  .nav-next {
-    display: block;
-    text-align: right;
-  }
-}
-
 .page-numbers {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .page-numbers li {
