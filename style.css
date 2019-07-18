@@ -187,10 +187,6 @@ a.more-link:hover {
   color: initial;
 }
 
-.entry-content figure.wp-block-image {
-  display: block;
-}
-
 .wp-block-image .aligncenter img {
   margin: 0 auto;
 }
