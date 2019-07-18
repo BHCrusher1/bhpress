@@ -431,18 +431,6 @@ ul.pn-post {
 	[12] footerの設定
 ******************** */
 
-#mastfoot {
-  background-color: #fff;
-}
-
-#mastfoot .site-info {
-  margin: 0;
-}
-
 /* ********************
 	[13] その他の設定
 ******************** */
-
-.site-info {
-  padding: 2em 1em;
-}
