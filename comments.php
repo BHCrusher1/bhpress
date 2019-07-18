@@ -8,8 +8,9 @@ if ( post_password_required() ) {
     <?php if (have_comments()): ?>
     <h2 class="comments-title">コメント</h3>
     <ol class="comment-list">
-        <?php wp_list_comments('avatar_size=0'); ?>
+    <?php wp_list_comments(); ?>
     </ol>
+    <?php the_comments_navigation(); ?>
     <?php endif; ?>
     <?php comment_form(); ?>
 </div><!-- #comments -->

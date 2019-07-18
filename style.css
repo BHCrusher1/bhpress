@@ -231,10 +231,23 @@ a.more-link:hover {
 	[9] コメント欄の設定
 ******************** */
 
+h2.comments-title,
 h3#reply-title {
   font-size: 1.5rem;
 }
 
+.comment-navigation h2.screen-reader-text {
+  display: none;
+}
+
+.comment-navigation {
+  margin-bottom : 1rem;
+}
+
+.comment-navigation .nav-links {
+  display: flex;
+  justify-content: space-around;
+}
 #comments input[type="text"],
 #comments input[type="email"],
 #comments input[type="url"],
