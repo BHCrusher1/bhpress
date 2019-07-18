@@ -133,6 +133,10 @@ object {
 	[7] メインコンテンツ本体の設定
 ******************** */
 
+article nav:last-child {
+  padding-bottom:1rem;
+}
+
 .single-featured-image-header {
   display: flex;
   justify-content: center;
@@ -409,10 +413,14 @@ ul.pn-post {
   background-color: #fff;
 }
 
-#secondary section ul {
+#secondary section ul,
+#secondary section ol {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   list-style: none;
-  padding: 0;
-  margin: 0;
   line-height: 2em;
 }
 
@@ -424,19 +432,6 @@ ul.pn-post {
 #secondary section ul li + li,
 #secondary section ol li + li {
   border-top: 1px solid #ddd;
-}
-.search-form {
-  padding: 0.5em;
-  display: flex;
-  justify-content: center;
-}
-
-input[type="search"] {
-  border: 1px solid #bbb;
-  border-radius: 1em;
-  padding: 0.5em;
-  margin: 0 0.5em 0 0;
-  width: calc(100% - 4em);
 }
 
 /* ********************
