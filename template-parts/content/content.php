@@ -14,7 +14,7 @@
         echo '<hr>';
     }
 ?>
-<div class="entry-content">
+<div class="container entry-content">
 <?php
     if (is_single()) {
         the_content();
@@ -22,7 +22,7 @@
         the_content('続きを読む ');
     }
 ?>
-</div><!-- .entry-content -->
+</div><!-- .container entry-content -->
 <hr>
 <?php
     get_template_part('template-parts/content/sns');

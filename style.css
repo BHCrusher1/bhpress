@@ -49,7 +49,8 @@ object {
 /* ********************
 	[3] headerの設定
 ******************** */
-
+ 
+/* カスタムロゴ */
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
@@ -68,12 +69,7 @@ object {
 	[4] メインコンテンツ全体の設定
 ******************** */
 
-@media (min-width: 769px) {
-  #no-sidebar {
-    width: 100%;
-  }
-}
-
+/* パンくずリストの背景色を初期化 */
 .breadcrumb {
   background-color: initial;
 }
@@ -86,6 +82,7 @@ object {
 	[5] 記事内ヘッダの設定
 ******************** */
 
+/* カテゴリーリンクの色 */
 .cat-links a {
   color: #fff;
 }
@@ -143,14 +140,6 @@ article nav:last-child {
   margin-bottom: 0.5em;
 }
 
-.entry-content {
-  margin: 0 0.5em;
-}
-
-.entry-excerpt {
-  display: flex;
-}
-
 .no-thumbnail {
   margin-left: calc(75px + 1em);
 }
@@ -193,31 +182,12 @@ a.more-link:hover {
   max-width: 100%;
 }
 
-.entry-content > *,
-.entry-summary > * {
-  margin: 2em 0;
-}
-
-.entry-content > * > *:last-child,
-.entry-summary > * > *:last-child {
-  margin-bottom: 0;
-}
-
-.entry-content > * > *:first-child,
-.entry-summary > * > *:first-child {
-  margin-top: 0;
-}
-
-figure {
-  margin: 0;
-}
-
 .entry-content .wp-block-image figcaption {
   font-size: 1rem;
   color: initial;
 }
 
-.entry-content .wp-block-image img {
+.entry-content figure.wp-block-image {
   display: block;
 }
 
@@ -226,23 +196,16 @@ figure {
 }
 
 .wp-block-image .alignright {
-  float: right;
-  margin-left: 1em;
+  float: none;
+  margin-left: auto;
 }
 .wp-block-image .alignleft {
-  float: left;
-  margin-right: 1em;
-}
-
-.entry-content:after,
-.entry-content:before {
-  content: "";
-  clear: both;
-  display: block;
+  float: none;
+  margin-right: auto;
 }
 
 /* ********************
-	[8] 記事内フッダーの設定
+	[8] 同じカテゴリの記事の設定
 ******************** */
 
 .related ul li + li {
