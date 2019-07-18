@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('bg-white'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('bg-white mb-3'); ?>>
 <?php
     get_template_part('template-parts/content/article-header');
     get_template_part('template-parts/content/sns');

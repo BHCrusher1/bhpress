@@ -22,12 +22,15 @@
         //同じカテゴリの記事がある場合
         if ($wp_query->have_posts()) {
             while ($wp_query->have_posts()):$wp_query->the_post(); ?>
-                <li class="nav-item py-1"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail');
-                if (has_post_thumbnail()) {
-                    echo '<div class="d-flex flex-column related-meta ">';
-                } else {
-                    echo '<div class="d-flex flex-column related-meta no-thumbnail">';
-                } ?>
+                <li class="nav-item py-1"><a href="<?php the_permalink(); ?>">
+                <?php
+                    if (has_post_thumbnail()) {
+                        echo '<div class="post-thumbnail">',the_post_thumbnail('thumbnail'),'</div>';
+                        echo '<div class="d-flex flex-column related-meta ">';
+                    } else {
+                        echo '<div class="d-flex flex-column related-meta no-thumbnail">';
+                    }
+                ?>
                 <h3 class="h6"><?php the_title(); ?></h3>
                 <time datetime="<?php the_modified_time('c'); ?>"><?php echo get_the_date(); ?></time>
                 </div>
