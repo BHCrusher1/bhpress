@@ -34,14 +34,12 @@ Template Name: サイドバー無し
 								the_post_thumbnail();
 							}
 							echo '</div><!-- .single-featured-image-header -->';
+							echo '<div class="container entry-content border-bottom">';
 						} else { //アイキャッチ画像無し
-							echo '<hr>';
+							echo '<div class="container entry-content border-top border-bottom">';
 						}
-					?>
-					<div class="container entry-content">
-						<?php the_content('続きを読む '); ?>
+						the_content('続きを読む '); ?>
 					</div><!-- .container entry-content -->
-					<hr>
 					<?php get_template_part('template-parts/content/sns'); ?>
 				</article>
 			</main><!-- .site-main -->

@@ -10,12 +10,10 @@
             the_post_thumbnail();
         }
         echo '</div><!-- .single-featured-image-header -->';
+        echo '<div class="container entry-content border-bottom">';
     } else { //アイキャッチ画像無し
-        echo '<hr>';
+        echo '<div class="container entry-content border-top border-bottom">';
     }
-?>
-<div class="container entry-content">
-<?php
     if (is_single()) {
         the_content();
     } else {
@@ -23,7 +21,6 @@
     }
 ?>
 </div><!-- .container entry-content -->
-<hr>
 <?php
     get_template_part('template-parts/content/sns');
     if (is_single()) { //個別投稿のページを表示中
