@@ -32,6 +32,13 @@ add_theme_support(
     )
 );
 
+// メニューの位置を指定
+register_nav_menus(
+    array(
+        'headerMenu-1' => __( 'Header Menu', 'ヘッダーメニュー' ),
+    )
+);
+
 add_theme_support('title-tag');
 add_theme_support('html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ));
 add_theme_support('post-thumbnails');
@@ -64,6 +71,7 @@ register_sidebar(array(
     'after_title'   => '</h4>',
 ));
 
+// paginationの形式を指定
 function bhpress_pagination_list($args = array())
 {
     $navigation = '';
