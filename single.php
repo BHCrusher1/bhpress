@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container">
+<div class="container mb-auto">
 	<?php breadcrumb(); ?>
 	<div class="row">
 		<section id="primary" class="col-md-9 content-area">

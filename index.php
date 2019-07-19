@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container">
+<div class="container mb-auto">
     <?php if (is_home()):?>
         <nav aria-label="breadcrumb"><!-- 上に表示されるパンくずリスト -->
             <ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">

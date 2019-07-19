@@ -9,9 +9,9 @@
 	<!-- wp_headここまで -->
 </head>
 
-<body <?php body_class('min-vh-100'); ?>>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id="page" class="d-flex flex-column min-vh-100 site">
 	<header id="masthead" class="mb-3 bg-white">
 
 		<div class="container site-branding-container">
