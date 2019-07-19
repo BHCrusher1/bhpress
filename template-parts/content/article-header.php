@@ -8,7 +8,7 @@
         the_title('<h2 class="d-inline-block h2 entry-title"><a class="text-white" href="'. esc_url(get_permalink()) .'" rel="bookmark">', '</a></h2>');
     }
     if ( ! is_page() ) : //固定ページを表示していない場合 ?>
-        <div class="d-inline-block entry-meta">
+        <div class="d-inline-block mb-2 entry-meta">
             <time class="mr-2 post-date" datetime="<?php the_date('c'); ?>"><i class="fas fa-clock"></i><?php echo get_the_date(); ?></time>
             <?php if ( get_the_date() != get_the_modified_date() ) : //公開日と最終更新日が一致しない場合のみ最終更新日を表示?>
                 <time class="mr-2 modified-date" datetime="<?php the_modified_time('c'); ?>"><i class="fas fa-sync"></i><?php echo the_modified_date(); ?></time>
