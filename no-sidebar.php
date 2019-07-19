@@ -15,11 +15,11 @@ Template Name: サイドバー無し
 					<?php
 						if (have_posts()): while (have_posts()):the_post();
 							if (is_single() or is_page()) { //個別ページの場合
-								the_title('<h1 class="d-inline h2 text-white entry-title">', '</h1>');
+								the_title('<h1 class="d-inline-block h2 text-white entry-title">', '</h1>');
 							} elseif (is_front_page() && is_home()) { //トップページ（ホームとフロントページ）の場合
-								the_title('<h3 class="d-inline h2 entry-title"><a class="text-white" href="'. esc_url(get_permalink()) .'" rel="bookmark">', '</a></h3>');
+								the_title('<h3 class="d-inline-block h2 entry-title"><a class="text-white" href="'. esc_url(get_permalink()) .'" rel="bookmark">', '</a></h3>');
 							} else { //それ以外
-								the_title('<h2 class="d-inline h2 entry-title"><a class="text-white" href="'. esc_url(get_permalink()) .'" rel="bookmark">', '</a></h2>');
+								the_title('<h2 class="d-inline-block h2 entry-title"><a class="text-white" href="'. esc_url(get_permalink()) .'" rel="bookmark">', '</a></h2>');
 							}
 						endwhile; endif;
 					?>
