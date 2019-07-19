@@ -292,29 +292,24 @@ p.form-submit {
 	[10] 前後の記事ナビバーの設定
 ******************** */
 
-.pagination {
-  background-color: #fff;
-  padding: 0.5em;
-  margin: 1em 0;
+.pagination .page-numbers,
+.comment-navigation .nav-links,
+.post-navigation .nav-links {
+  font-weight: bolder;
 }
 
-.pagination,
-.comments-pagination,
-ul.pn-post {
-  font-weight: 800;
-  text-align: center;
-}
-
-.page-numbers {
+.pagination .page-numbers {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .page-numbers li {
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 /* ********************

@@ -86,7 +86,7 @@ function bhpress_pagination_list($args = array())
         $links = paginate_links($args);
  
         if ($links) {
-            $template = '<nav class="container navigation pagination" role="navigation">%1$s</nav>';
+            $template = '<nav class="container navigation pagination justify-content-center bg-white my-3 py-3" role="navigation">%1$s</nav>';
             $navigation = sprintf($template, $links);
         }
     }
