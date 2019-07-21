@@ -1,4 +1,9 @@
 <?php
+/**
+ * SNSボタン
+ */
+?>
+<?php
 $share_url   = get_permalink();
 $share_title = get_the_title();
 ?>

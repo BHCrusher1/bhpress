@@ -1,9 +1,16 @@
+<?php
+/**
+ * 検索結果画面
+ */
+?>
 <?php get_header(); ?>
 <div class="container mb-auto">
 	<header class="page-header">
-		<?php if (have_posts()) : ?>
+		<?php if (have_posts()) : //検索結果が存在したか
+			?>
 			<h1 class="h2 page-title"><?php printf(__('Search Results for: %s', 'twentyseventeen'), '<span>' . get_search_query() . '</span>'); ?></h1>
-		<?php else : ?>
+		<?php else : //無かった場合
+			?>
 			<h1 class="h2 page-title">何も見つかりませんでした</h1>
 		<?php endif; ?>
 	</header><!-- .page-header -->

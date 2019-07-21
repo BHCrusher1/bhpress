@@ -1,3 +1,8 @@
+<?php
+/**
+ * アーカイブページ
+ */
+?>
 <?php get_header(); ?>
 <div class="container mb-auto">
     <?php breadcrumb(); ?>

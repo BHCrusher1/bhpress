@@ -1,3 +1,8 @@
+<?php
+/**
+ * サイトのヘッダ（サイトのタイトルとか）部分
+ */
+?>
 <div class="py-2 site-branding">
 	<?php if (has_custom_logo()) : //カスタムロゴの有無を判定
 		?>

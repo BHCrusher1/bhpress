@@ -1,3 +1,8 @@
+<?php
+/**
+ * 各記事の本体
+ */
+?>
 <footer id="colophon" class="bg-white py-2 site-footer">
 	<div class="site-info">
 		<p class="text-center"><?php $blog_info = get_bloginfo('name'); ?>
@@ -6,7 +11,7 @@
 			<?php endif; ?>
 			このサイトは<a href="https://github.com/BHCrusher1/BHpress" class="imprint">BHpressテーマ</a>を使用しています,
 			<?php
-			if (function_exists('the_privacy_policy_link')) {
+			if (function_exists('the_privacy_policy_link')) { //プライバシーポリシーが存在する場合リンクを表示
 				the_privacy_policy_link('', '<span role="separator" aria-hidden="true"></span>');
 			}
 			?>

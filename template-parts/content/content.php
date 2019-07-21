@@ -1,3 +1,8 @@
+<?php
+/**
+ * 各記事の本体
+ */
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white mb-3'); ?>>
     <?php
     get_template_part('template-parts/content/article-header');
@@ -14,10 +19,10 @@
     } else { //アイキャッチ画像無し
         echo '<div class="container entry-content border-top border-bottom">';
     }
-    if (is_single()) {
-        the_content();
+    if (is_single()) { //個別投稿のページを表示中
+        the_content(); //全部を表示
     } else {
-        the_content('続きを読む ');
+        the_content('続きを読む '); //moreまで表示
     }
     ?>
     </div><!-- .container entry-content -->

@@ -1,3 +1,8 @@
+<?php
+/**
+ * 各記事のヘッダ（タイトル・投稿日・更新日・カテゴリ）の部分
+ */
+?>
 <header class="container bg-primary text-white entry-header">
     <?php
     if (is_single() or is_page()) { //個別ページの場合

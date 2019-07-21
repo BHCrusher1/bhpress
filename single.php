@@ -1,3 +1,8 @@
+<?php
+/**
+ * 個別記事を表示する場合
+ */
+?>
 <?php get_header(); ?>
 <div class="container mb-auto">
 	<?php breadcrumb(); ?>

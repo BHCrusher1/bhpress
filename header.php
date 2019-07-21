@@ -1,3 +1,8 @@
+<?php
+/**
+ * ページのheadと、headerを読み込む部分
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 

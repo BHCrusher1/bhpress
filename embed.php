@@ -1,4 +1,8 @@
 <?php
+/**
+ * WordPress 埋め込みリンク
+ */
+
 if (!headers_sent()) {
 	header('X-WP-embed: true');
 }

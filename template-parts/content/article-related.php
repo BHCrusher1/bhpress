@@ -1,4 +1,8 @@
-<footer class="container my-3 related">
+<?php
+/**
+ * 各記事の下のフッター（同じカテゴリの記事）の部分
+ */
+?><footer class="container my-3 related">
     <p class="h5">同じカテゴリの記事</p>
     <ul class="nav flex-column">
         <?php
