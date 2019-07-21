@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white mb-3'); ?>>
-<?php
+    <?php
     get_template_part('template-parts/content/article-header');
     get_template_part('template-parts/content/sns');
     if (has_post_thumbnail()) { //アイキャッチ画像がある
@@ -19,13 +19,13 @@
     } else {
         the_content('続きを読む ');
     }
-?>
-</div><!-- .container entry-content -->
-<?php
+    ?>
+    </div><!-- .container entry-content -->
+    <?php
     get_template_part('template-parts/content/sns');
     if (is_single()) { //個別投稿のページを表示中
         get_template_part('template-parts/content/post-navigation'); //前後の記事
         get_template_part('template-parts/content/article-related'); //同じカテゴリの記事
     }
-?>
+    ?>
 </article>

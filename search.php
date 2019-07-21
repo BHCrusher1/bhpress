@@ -2,20 +2,19 @@
 <div class="container mb-auto">
 	<header class="page-header">
 		<?php if (have_posts()) : ?>
-		<h1 class="h2 page-title"><?php printf(__('Search Results for: %s', 'twentyseventeen'), '<span>' . get_search_query() . '</span>'); ?>
-		</h1>
+			<h1 class="h2 page-title"><?php printf(__('Search Results for: %s', 'twentyseventeen'), '<span>' . get_search_query() . '</span>'); ?></h1>
 		<?php else : ?>
-		<h1 class="h2 page-title">何も見つかりませんでした</h1>
+			<h1 class="h2 page-title">何も見つかりませんでした</h1>
 		<?php endif; ?>
 	</header><!-- .page-header -->
 	<?php breadcrumb(); ?>
-		<div class="row">
+	<div class="row">
 		<section id="primary" class="col-md-9 content-area">
 			<main id="main" class="site-main">
 				<?php
 				if (have_posts()) { //検索ワードに一致するものがある場合
 					while (have_posts()) : the_post();
-						get_template_part( 'template-parts/content/content', 'excerpt' );
+						get_template_part('template-parts/content/content', 'excerpt');
 					endwhile;
 					bhpress_pagination_list();
 				} else {
@@ -23,8 +22,8 @@
 					get_search_form();
 				} ?>
 			</main><!-- .site-main -->
-        </section><!-- .content-area -->
-        <?php get_sidebar(); ?> 
-    </div><!-- .row -->
+		</section><!-- .content-area -->
+		<?php get_sidebar(); ?>
+	</div><!-- .row -->
 </div><!-- .container -->
 <?php get_footer();

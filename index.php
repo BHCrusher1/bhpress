@@ -1,14 +1,15 @@
 <?php get_header(); ?>
 <div class="container mb-auto">
-    <?php if (is_home()):?>
-        <nav aria-label="breadcrumb"><!-- 上に表示されるパンくずリスト -->
+    <?php if (is_home()) : ?>
+        <nav aria-label="breadcrumb">
+            <!-- 上に表示されるパンくずリスト -->
             <ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">
-                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><i class="fas fa-home"></i><a itemprop="item" href="<?php esc_url( home_url( '/' ) );?>" class="home"><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
+                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><i class="fas fa-home"></i><a itemprop="item" href="<?php esc_url(home_url('/')); ?>" class="home"><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
             </ol>
         </nav>
     <?php elseif (is_page()) : ?>
         <?php breadcrumb(); ?>
-    <?php endif;?>
+    <?php endif; ?>
     <div class="row">
         <section id="primary" class="col-md-9 content-area">
             <main id="main" class="site-main">
@@ -29,7 +30,7 @@
                 ?>
             </main><!-- .site-main -->
         </section><!-- .content-area -->
-        <?php get_sidebar(); ?> 
+        <?php get_sidebar(); ?>
     </div><!-- .row -->
 </div><!-- .container -->
 <?php get_footer();

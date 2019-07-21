@@ -10,10 +10,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="d-flex flex-column min-vh-100 site">
-	<header id="masthead" class="mb-3 bg-white">
-		<div class="container site-branding-container">
-			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-		</div><!-- .site-branding-container -->
-	</header><!-- #masthead -->
+	<?php wp_body_open(); ?>
+	<div id="page" class="d-flex flex-column min-vh-100 site">
+		<header id="masthead" class="mb-3 bg-white">
+			<div class="container site-branding-container">
+				<?php get_template_part('template-parts/header/site', 'branding'); ?>
+			</div><!-- .site-branding-container -->
+		</header><!-- #masthead -->
