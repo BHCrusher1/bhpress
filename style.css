@@ -144,16 +144,6 @@ article nav:last-child {
   margin-left: calc(75px + 1em);
 }
 
-.entry-content table {
-  border-collapse: collapse;
-}
-
-.entry-content table th,
-.entry-content table td {
-  border: 1px #616161 solid;
-  padding: 0.25em;
-}
-
 a.more-link,
 a.read-more {
   display: inline-block;
