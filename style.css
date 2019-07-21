@@ -2,6 +2,7 @@
 /*
 theme Name: BHpress-Develop
 Theme URL: https://bhcrusher1.net
+Description: ブログ「地測の記」で使用するために制作したテーマ。Githubページ: https://github.com/BHCrusher1/BHpress
 Author: BHCrusher1
 Author URI: https://twitter.com/BHCrusher1
 Version: 2.0(dev)
@@ -14,10 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	[1] HTML全体の設定
 ******************** */
 
-@media (max-width: 1023px) {
-  html {
-    font-size: calc(0.875rem + ((1vw - 3.2px) * 0.2841));
-  }
+html {
+  font-size: calc(0.875rem + ((1vw - 3.2px) * 0.2841));
 }
 
 @media (min-width: 1024px) {
