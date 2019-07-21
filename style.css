@@ -144,23 +144,6 @@ article nav:last-child {
   margin-left: calc(75px + 1em);
 }
 
-a.more-link,
-a.read-more {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #fff;
-  color: #e91e63;
-  border: solid 2px #e91e63;
-  border-radius: 0.5em;
-  transition: 0.4s;
-}
-
-a.more-link:hover {
-  background: #e91e63;
-  color: #fff;
-}
-
 .wp-embedded-content {
   max-width: 100%;
   height: calc(104px + 1em);
