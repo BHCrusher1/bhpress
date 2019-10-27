@@ -4,7 +4,7 @@
         <nav aria-label="breadcrumb">
             <!-- 上に表示されるパンくずリスト -->
             <ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">
-                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><i class="fas fa-home"></i><a itemprop="item" href="<?php esc_url(home_url('/')); ?>" class="home"><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
+                <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="<?php esc_url(home_url('/')); ?>" class="home"><i class="fas fa-home"></i><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
             </ol>
         </nav>
     <?php elseif (is_page()) : ?>
