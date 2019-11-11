@@ -176,6 +176,10 @@ article nav:last-child {
   margin-right: auto;
 }
 
+.break-word {
+	word-wrap: break-word;
+}
+
 /* ********************
 	[8] 同じカテゴリの記事の設定
 ******************** */
