@@ -15,12 +15,12 @@
     if (!is_page()) : //固定ページを表示していない場合 
         ?>
         <div class="d-inline-block mb-2 entry-meta">
-            <time class="mr-2 post-date" datetime="<?php the_date('c'); ?>"><i class="fas fa-clock"></i><?php echo get_the_date(); ?></time>
+            <time class="mr-2 post-date" datetime="<?php the_date('c'); ?>">&#x1F199;<?php echo get_the_date(); ?></time>
             <?php if (get_the_date() != get_the_modified_date()) : //公開日と最終更新日が一致しない場合のみ最終更新日を表示
                 ?>
-                <time class="mr-2 modified-date" datetime="<?php the_modified_time('c'); ?>"><i class="fas fa-sync"></i><?php echo the_modified_date(); ?></time>
+                <time class="mr-2 modified-date" datetime="<?php the_modified_time('c'); ?>">&#x1F504;<?php echo the_modified_date(); ?></time>
             <?php endif; ?>
-            <span class="cat-links"><i class="fas fa-folder"></i>：<?php the_category(', '); ?></span>
+            <span class="cat-links">&#x1F4C1;：<?php the_category(', '); ?></span>
         </div> <!-- .entry-meta -->
     <?php endif; ?>
 </header>

@@ -3,8 +3,8 @@
 //cssの読み込み
 function add_stylesheet()
 {
-    wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', array(), null);
-    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css', array(), null);
+    //wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', array(), null);
+    wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css', array(), null);
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), date('YmdHi', filemtime(get_stylesheet_directory() . '/style.css')));
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');
@@ -81,8 +81,8 @@ function bhpress_pagination_list($args = array())
     if ($GLOBALS['wp_query']->max_num_pages > 1) {
         $args = wp_parse_args($args, array(
             'mid_size'      => 2,
-            'prev_text'     => '<i class="fas fa-arrow-left"></i><span class="screen-reader-text">前へ',
-            'next_text'     => '次へ<i class="fas fa-arrow-right"></i>',
+            'prev_text'     => '←<span class="screen-reader-text">前へ',
+            'next_text'     => '次へ→',
             'type'          => 'list',
         ));
 
@@ -151,7 +151,7 @@ function breadcrumb()
 
     $str .= '<nav aria-label="breadcrumb">';
     $str .= '<ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope itemtype="http://data-vocabulary.org/BreadcrumbList">';
-    $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . home_url('/') . '" class="home"><i class="fas fa-home"></i><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>';
+    $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . home_url('/') . '" class="home">&#x1F3E0;<span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>';
 
     /* 通常の投稿ページ */
     if (is_singular('post')) {
