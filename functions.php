@@ -53,8 +53,8 @@ function bhpress_setup()
     // Enqueue editor styles.
     add_editor_style('assets/css/editor-style.css');
 
-    // Add support for Block Styles （今のところ使ってなさそうなので無効化）
-    // add_theme_support( 'wp-block-styles' );
+    // Add support for Block Styles
+    add_theme_support( 'wp-block-styles' );
 }
 add_action('after_setup_theme', 'bhpress_setup');
 
