@@ -8,7 +8,7 @@ if (post_password_required()) {
 }
 ?>
 
-<div id="comments" class="container bg-white my-3 <?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
+<div id="comments" class="container bg-white my-3 py-3 <?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
     <?php if (have_comments()) : //コメントがある場合
         ?>
         <h3 class="comments-title">コメント</h3>
