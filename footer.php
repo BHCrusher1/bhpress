@@ -16,7 +16,7 @@
 			}
 			?>
 		</p>
-		<p class="text-center mb-0">&copy; 2015-2019 <a href="https://twitter.com/BHCrusher1" target="_blank" rel="noopener">@BHCrusher1</a></p>
+		<p class="text-center mb-0">&copy; 2015-2020 <a href="https://twitter.com/BHCrusher1" target="_blank" rel="noopener">@BHCrusher1</a></p>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
