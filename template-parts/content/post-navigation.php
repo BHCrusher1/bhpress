@@ -8,13 +8,13 @@
     <ul class="nav nav-pills nav-justified nav-links">
         <?php if (get_previous_post()) : //前の記事の有無
             ?>
-            <li class="nav-item nav-previous">前の記事<br><?php previous_post_link('%link', '<i class="fas fa-arrow-left"></i> %title'); ?></li>
+            <li class="nav-item nav-previous">前の記事<br><?php previous_post_link('%link', '← %title'); ?></li>
         <?php else : ?>
             <li class="nav-item nav-previous">前の記事<br>前の記事がありません</li>
         <?php endif; ?>
         <?php if (get_next_post()) : //後ろの記事の有無
             ?>
-            <li class="nav-item nav-next">次の記事<br><?php next_post_link('%link', '%title <i class="fas fa-arrow-right"></i>'); ?></li>
+            <li class="nav-item nav-next">次の記事<br><?php next_post_link('%link', '%title →'); ?></li>
         <?php else : ?>
             <li class="nav-item nav-next">次の記事<br>次の記事がありません</li>
         <?php endif; ?>

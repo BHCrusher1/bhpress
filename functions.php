@@ -3,8 +3,8 @@
 //cssの読み込み
 function add_stylesheet()
 {
-    wp_enqueue_style('bootstrap', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array(), null);
-    wp_enqueue_style('fontawesome', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null);
+    //wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', array(), null);
+    wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css', array(), null);
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), date('YmdHi', filemtime(get_stylesheet_directory() . '/style.css')));
 }
 add_action('wp_enqueue_scripts', 'add_stylesheet');
@@ -15,12 +15,25 @@ function add_script()
     //WP標準のjQueryの読み込みを止める
     wp_deregister_script('jquery');
     //スクリプトの読み込み
-    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
-    wp_enqueue_script('popper.js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js', array('jquery'), null, true);
-    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('popper.js'), null, true);
+    wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
+    wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js', array('jquery'), null, true);
     wp_enqueue_script('script', get_template_directory_uri() . '/addClass.js', array('jquery'), date('YmdHi', filemtime(get_stylesheet_directory() . '/addClass.js')), true);
 }
 add_action('wp_enqueue_scripts', 'add_script');
+
+// https://qiita.com/Takuya_Kouyama/items/b815eb5e1f85d819b4d8
+// 要jQuery slim版不可
+function insert_inline_script()
+{
+    if (function_exists('wp_add_inline_script')) {
+        $smoothscroll = '
+$(function(){$(\'a[href^="#"]\').click(function(){var c=400;var b=$(this).attr("href");var d=$(b=="#"||b==""?"html":b);var a=d.offset().top;$("body,html").animate({scrollTop:a},c,"swing");return false})});
+        ';
+
+        wp_add_inline_script('jquery', $smoothscroll);
+    }
+}
+add_action('wp_footer', 'insert_inline_script');
 
 //カスタムロゴを有効化
 add_theme_support(
@@ -53,8 +66,8 @@ function bhpress_setup()
     // Enqueue editor styles.
     add_editor_style('assets/css/editor-style.css');
 
-    // Add support for Block Styles （今のところ使ってなさそうなので無効化）
-    // add_theme_support( 'wp-block-styles' );
+    // Add support for Block Styles
+    add_theme_support( 'wp-block-styles' );
 }
 add_action('after_setup_theme', 'bhpress_setup');
 
@@ -81,8 +94,8 @@ function bhpress_pagination_list($args = array())
     if ($GLOBALS['wp_query']->max_num_pages > 1) {
         $args = wp_parse_args($args, array(
             'mid_size'      => 2,
-            'prev_text'     => '<i class="fas fa-arrow-left"></i><span class="screen-reader-text">前へ',
-            'next_text'     => '次へ<i class="fas fa-arrow-right"></i>',
+            'prev_text'     => '←<span class="screen-reader-text">前へ',
+            'next_text'     => '次へ→',
             'type'          => 'list',
         ));
 
@@ -151,7 +164,7 @@ function breadcrumb()
 
     $str .= '<nav aria-label="breadcrumb">';
     $str .= '<ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope itemtype="http://data-vocabulary.org/BreadcrumbList">';
-    $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-home"></i><a itemprop="item" href="' . home_url('/') . '" class="home"><span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>';
+    $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . home_url('/') . '" class="home">&#x1F3E0;<span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>';
 
     /* 通常の投稿ページ */
     if (is_singular('post')) {
@@ -165,16 +178,16 @@ function breadcrumb()
                 $pNum++;
             }
         }
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_category_link($cat->term_id) . '"><span itemprop="name">' . $cat->cat_name . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($cat->term_id) . '"><span itemprop="name">' . $cat->cat_name . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
         $pNum++;
-        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
     }
 
     /* カスタムポスト */ elseif (is_single() && !is_singular('post')) {
         $cp_name = get_post_type_object(get_post_type())->label;
         $cp_url = home_url('/') . get_post_type_object(get_post_type())->name;
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . $cp_url . '"><span itemprop="name">' . $cp_name . '</span></a><meta itemprop="position" content="2"></li>';
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="3"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . $cp_url . '"><span itemprop="name">' . $cp_name . '</span></a><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="3"></li>';
     }
 
     /* 固定ページ */ elseif (is_page()) {
@@ -182,11 +195,11 @@ function breadcrumb()
         if ($post->post_parent != 0) {
             $ancestors = array_reverse(get_post_ancestors($post->ID));
             foreach ($ancestors as $ancestor) {
-                $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_permalink($ancestor) . '"><span itemprop="name">' . get_the_title($ancestor) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
+                $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink($ancestor) . '"><span itemprop="name">' . get_the_title($ancestor) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
                 $pNum++;
             }
         }
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
     }
 
     /* カテゴリページ */ elseif (is_category()) {
@@ -195,52 +208,52 @@ function breadcrumb()
         if ($cat->parent != 0) {
             $ancestors = array_reverse(get_ancestors($cat->cat_ID, 'category'));
             foreach ($ancestors as $ancestor) {
-                $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_category_link($ancestor) . '"><span itemprop="name">' . get_cat_name($ancestor) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
+                $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link($ancestor) . '"><span itemprop="name">' . get_cat_name($ancestor) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
             }
         }
-        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . $cat->name . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $cat->name . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
     }
 
     /* タグページ */ elseif (is_tag()) {
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . single_tag_title('', false) . '</span><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . single_tag_title('', false) . '</span><meta itemprop="position" content="2"></li>';
     }
 
     /* 時系列アーカイブページ */ elseif (is_date()) {
         if (get_query_var('day') != 0) {
-            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_year_link(get_query_var('year')) . '"><span itemprop="name">' . get_query_var('year') . '年</span></a><meta itemprop="position" content="2"></li>';
-            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_month_link(get_query_var('year'), get_query_var('monthnum')) . '"><span itemprop="name">' . get_query_var('monthnum') . '月</span></a><meta itemprop="position" content="3"></li>';
-            $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . get_query_var('day') . '</span>日<meta itemprop="position" content="4"></li>';
+            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_year_link(get_query_var('year')) . '"><span itemprop="name">' . get_query_var('year') . '年</span></a><meta itemprop="position" content="2"></li>';
+            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_month_link(get_query_var('year'), get_query_var('monthnum')) . '"><span itemprop="name">' . get_query_var('monthnum') . '月</span></a><meta itemprop="position" content="3"></li>';
+            $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . get_query_var('day') . '</span>日<meta itemprop="position" content="4"></li>';
         } elseif (get_query_var('monthnum') != 0) {
-            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_year_link(get_query_var('year')) . '"><span itemprop="name">' . get_query_var('year') . '年</span></a><meta itemprop="position" content="2"></li>';
-            $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . get_query_var('monthnum') . '</span>月<meta itemprop="position" content="3"></li>';
+            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_year_link(get_query_var('year')) . '"><span itemprop="name">' . get_query_var('year') . '年</span></a><meta itemprop="position" content="2"></li>';
+            $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . get_query_var('monthnum') . '</span>月<meta itemprop="position" content="3"></li>';
         } else {
-            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . get_query_var('year') . '年</span><meta itemprop="position" content="2"></li>';
+            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . get_query_var('year') . '年</span><meta itemprop="position" content="2"></li>';
         }
     }
 
     /* 投稿者ページ */ elseif (is_author()) {
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">投稿者 : ' . get_the_author_meta('display_name', get_query_var('author')) . '</span><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">投稿者 : ' . get_the_author_meta('display_name', get_query_var('author')) . '</span><meta itemprop="position" content="2"></li>';
     }
 
     /* 添付ファイルページ */ elseif (is_attachment()) {
         $pNum = 2;
         if ($post->post_parent != 0) {
-            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><a itemprop="item" href="' . get_permalink($post->post_parent) . '"><span itemprop="name">' . get_the_title($post->post_parent) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
+            $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink($post->post_parent) . '"><span itemprop="name">' . get_the_title($post->post_parent) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
             $pNum++;
         }
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
     }
 
     /* 検索結果ページ */ elseif (is_search()) {
-        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">「' . get_search_query() . '」で検索した結果</span><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">「' . get_search_query() . '」で検索した結果</span><meta itemprop="position" content="2"></li>';
     }
 
     /* 404 Not Found ページ */ elseif (is_404()) {
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">お探しの記事は見つかりませんでした。</span><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">お探しの記事は見つかりませんでした。</span><meta itemprop="position" content="2"></li>';
     }
 
     /* その他のページ */ else {
-        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><i class="fas fa-caret-right"></i><span itemprop="name">' . wp_title('', false) . '</span><meta itemprop="position" content="2"></li>';
+        $str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . wp_title('', false) . '</span><meta itemprop="position" content="2"></li>';
     }
 
     $str .= '</ol>';

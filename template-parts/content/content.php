@@ -17,7 +17,7 @@
         echo '</div><!-- .single-featured-image-header -->';
         echo '<div class="container entry-content border-bottom">';
     } else { //アイキャッチ画像無し
-        echo '<div class="container entry-content border-top border-bottom">';
+        echo '<div class="container entry-content border-top pt-3 border-bottom">';
     }
     if (is_single()) { //個別投稿のページを表示中
         the_content(); //全部を表示
