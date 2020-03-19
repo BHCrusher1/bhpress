@@ -22,7 +22,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script>$(function(){$('a[href^="#"]').click(function(){var c=400;var b=$(this).attr("href");var d=$(b=="#"||b==""?"html":b);var a=d.offset().top;$("body,html").animate({scrollTop:a},c,"swing");return false})});</script>
 </body>
 
 </html>
