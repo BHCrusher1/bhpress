@@ -5,14 +5,14 @@
 ?>
 <footer id="colophon" class="bg-white py-2 site-footer">
 	<div class="site-info">
-		<p class="text-center"><?php $blog_info = get_bloginfo('name'); ?>
-			<?php if (!empty($blog_info)) : ?>
-				<a class="site-name" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>,
+		<p class="text-center"><?php $blog_info = get_bloginfo( 'name' ); ?>
+			<?php if ( ! empty( $blog_info ) ) : ?>
+				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<?php endif; ?>
 			このサイトは<a href="https://github.com/BHCrusher1/BHpress" class="imprint">BHpressテーマ</a>を使用しています,
 			<?php
-			if (function_exists('the_privacy_policy_link')) { //プライバシーポリシーが存在する場合リンクを表示
-				the_privacy_policy_link('', '<span role="separator" aria-hidden="true"></span>');
+			if ( function_exists( 'the_privacy_policy_link' ) ) { // プライバシーポリシーが存在する場合リンクを表示
+				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 			}
 			?>
 		</p>
