@@ -12,7 +12,7 @@ function add_script() {
 	 // WP標準のjQueryの読み込みを止める
 	wp_deregister_script( 'jquery' );
 	// スクリプトの読み込み
-	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true );
+	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.bundle.min.js', array(), null, true );
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/addClass.js', array( 'jquery' ), date( 'YmdHi', filemtime( get_stylesheet_directory() . '/addClass.js' ) ), true );
 }
