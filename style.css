@@ -55,6 +55,10 @@ object {
 	align-items: center;
 }
 
+.header-titles > * {
+	margin-bottom: 0;
+}
+
 /* カスタムロゴ */
 .site-logo .custom-logo-link {
 	border-radius: 100%;

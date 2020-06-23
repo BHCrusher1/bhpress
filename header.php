@@ -57,7 +57,7 @@
 							'theme_location' => 'headerMenu-1',
 							'container'      => '',
 							'menu_class'     => 'headerMenu-1',
-							'items_wrap'     => '<ul id="%2$s">%3$s</ul>',
+							'items_wrap'     => '<ul id="%2$s" class="nav justify-content-around">%3$s</ul>',
 						)
 					);
 					?>
