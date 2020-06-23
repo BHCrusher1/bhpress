@@ -51,6 +51,10 @@ object {
 	[3] headerの設定
 ******************** */
 
+.header-titles{
+	align-items: center;
+}
+
 /* カスタムロゴ */
 .site-logo .custom-logo-link {
 	border-radius: 100%;
