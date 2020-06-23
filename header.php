@@ -34,9 +34,9 @@
 						if ( ! empty( $blog_info ) ) { // サイトのタイトルが空でない場合
 					?>
 						<?php if ( is_front_page() && is_home() ) { // デフォルト設定の最新の投稿を表示になっている場合 ?>
-							<h1 class="h1 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<h1 class="h3 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php } else { ?>
-							<p class="h1 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<p class="h3 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<?php } ?>
 					<?php } ?>
 
