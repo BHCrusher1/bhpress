@@ -17,21 +17,15 @@ function add_script()
     //スクリプトの読み込み
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
     wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js', array('jquery'), null, true);
-    wp_enqueue_script('script', get_template_directory_uri() . '/addClass.js', array('jquery'), date('YmdHi', filemtime(get_stylesheet_directory() . '/addClass.js')), true);
 }
 add_action('wp_enqueue_scripts', 'add_script');
 
-// https://qiita.com/Takuya_Kouyama/items/b815eb5e1f85d819b4d8
-// 要jQuery slim版不可
-function insert_inline_script()
-{
-    if (function_exists('wp_add_inline_script')) {
-        $smoothscroll = '
-$(function(){$(\'a[href^="#"]\').click(function(){var c=400;var b=$(this).attr("href");var d=$(b=="#"||b==""?"html":b);var a=d.offset().top;$("body,html").animate({scrollTop:a},c,"swing");return false})});
-        ';
+function insert_inline_script() {
+	if ( function_exists( 'wp_add_inline_script' ) ) {
+		$inlineScript = file_get_contents( get_template_directory_uri().'/inlineScript.js', true );
 
-        wp_add_inline_script('jquery', $smoothscroll);
-    }
+		wp_add_inline_script( 'jquery', $inlineScript );
+	}
 }
 add_action('wp_footer', 'insert_inline_script');
 
