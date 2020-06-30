@@ -25,31 +25,31 @@
 			<div class="container-fluid site-branding-container py-2">
 				<div class="header-titles d-flex">
 
-					<?php if ( has_custom_logo() ) { // カスタムロゴがある場合 ?>
+					<?php if ( has_custom_logo() ) : // カスタムロゴがある場合 ?>
 						<div class="site-logo"><?php the_custom_logo(); ?></div>
-					<?php } ?>
+					<?php endif; ?>
 
 					<?php
 						$blog_info = get_bloginfo( 'name' ); // サイトのタイトルを取得
-						if ( ! empty( $blog_info ) ) { // サイトのタイトルが空でない場合
+						if ( ! empty( $blog_info ) ) : // サイトのタイトルが空でない場合
 					?>
-						<?php if ( is_front_page() && is_home() ) { // デフォルト設定の最新の投稿を表示になっている場合 ?>
+						<?php if ( is_front_page() && is_home() ) : // デフォルト設定の最新の投稿を表示になっている場合 ?>
 							<h1 class="h3 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php } else { ?>
+						<?php else : ?>
 							<p class="h3 font-weight-bold site-title"><a class="text-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php } ?>
-					<?php } ?>
+						<?php endif; ?>
+					<?php endif; ?>
 
 					<?php
 						$description = get_bloginfo( 'description', 'display' ); // サイトのキャッチフレーズを取得
-						if ( $description || is_customize_preview() ) { // サイトのキャッチフレーズが空でない場合
+						if ( $description || is_customize_preview() ) : // サイトのキャッチフレーズが空でない場合
 					?>
 						<p class="text-secondary h5 site-description"><?php echo $description; ?></p>
-					<?php } ?>
+					<?php endif; ?>
 
 				</div><!-- .header-titles -->
 
-				<?php if ( has_nav_menu( 'headerMenu-1' ) ) { // メニューがある場合メニューを表示 ?>
+				<?php if ( has_nav_menu( 'headerMenu-1' ) ) : // メニューがある場合メニューを表示 ?>
 					<nav id="site-navigation" class="header-navigation" role="navigation">
 					<?php
 					wp_nav_menu(
@@ -62,6 +62,6 @@
 					);
 					?>
 					</nav><!-- #site-navigation -->
-				<?php } ?>
+				<?php endif; ?>
 			</div><!-- .site-branding-container -->
 		</header><!-- #site-header -->
