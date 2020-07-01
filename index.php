@@ -1,22 +1,24 @@
 <?php get_header(); ?>
 <div class="container mb-auto">
-	<?php if ( is_search() ) : // 検索結果ページの場合 ?>
-		<header class="page-header">
-			<?php if ( have_posts() ) : // 検索結果が存在したか ?>
-				<h1 class="h2 page-title my-1"><?php printf( '検索:“<span>' . get_search_query() . '</span>”' ); ?></h1>
-			<?php else : // 無かった場合 ?>
-				<h1 class="h2 page-title my-1">何も見つかりませんでした</h1>
-			<?php endif; ?>
-		</header><!-- .page-header -->
-	<?php endif; ?>
-	<?php breadcrumb(); ?>
+	<?php
+	$archive_header = '';
+	if ( is_search() ) {
+		$archive_header = sprintf('検索:“<span>' . get_search_query() . '</span>”');
+	} elseif ( is_date() ) {
+		$archive_header = get_the_archive_title();
+	}
+	if ( $archive_header ) {
+		echo ('<header class="page-header"><h1 class="h2 page-title my-1">' . $archive_header . '</h1></header><!-- .page-header -->');
+	}
+	breadcrumb();
+	?>
 	<div class="row">
 		<main id="main" class="col-md-9 content-area" role="main">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
 				the_post();
-				if ( is_search() ) {
+				if ( is_search() || is_date() ) {
 					get_template_part( 'template-parts/content/content', 'excerpt' );
 				} else {
 					get_template_part( 'template-parts/content/content' );
