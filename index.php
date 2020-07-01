@@ -1,36 +1,39 @@
 <?php get_header(); ?>
 <div class="container mb-auto">
-	<?php if ( is_home() ) : ?>
-		<nav aria-label="breadcrumb">
-			<!-- 上に表示されるパンくずリスト -->
-			<ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">
-				<li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="<?php esc_url( home_url( '/' ) ); ?>" class="home">&#x1F3E0;<span itemprop="name">HOME</span></a><meta itemprop="position" content="1"></li>
-			</ol>
-		</nav>
-	<?php elseif ( is_page() ) : ?>
-		<?php breadcrumb(); ?>
+	<?php if ( is_search() ) : // 検索結果ページの場合 ?>
+		<header class="page-header">
+			<?php if ( have_posts() ) : // 検索結果が存在したか ?>
+				<h1 class="h2 page-title my-1"><?php printf( '検索:“<span>' . get_search_query() . '</span>”' ); ?></h1>
+			<?php else : // 無かった場合 ?>
+				<h1 class="h2 page-title my-1">何も見つかりませんでした</h1>
+			<?php endif; ?>
+		</header><!-- .page-header -->
 	<?php endif; ?>
+	<?php breadcrumb(); ?>
 	<div class="row">
-		<section id="primary" class="col-md-9 content-area">
-			<main id="main" class="site-main">
-				<?php
-				if ( have_posts() ) {
-					// コンテンツがあればループ
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content' );
-					}
-
-					// 前後ページのナビゲーション
-					bhpress_pagination_list();
+		<main id="main" class="col-md-9 content-area" role="main">
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				if ( is_search() ) {
+					get_template_part( 'template-parts/content/content', 'excerpt' );
 				} else {
-
-					// コンテンツがない場合は"投稿が見つかりません"というテンプレートを含めます
-					get_template_part( 'template-parts/content/content', 'none' );
+					get_template_part( 'template-parts/content/content' );
 				}
-				?>
-			</main><!-- .site-main -->
-		</section><!-- .content-area -->
+			}
+			bhpress_pagination_list();
+		} else {
+			if ( is_search() ) {
+				echo '<p>検索キーワードに一致するものが見つかりませんでした。 別のキーワードで試してみてください。</p>';
+				get_search_form();
+			} else {
+				// コンテンツがない場合は"投稿が見つかりません"というテンプレートを含めます
+				get_template_part( 'template-parts/content/content', 'none' );
+			}
+		}
+		?>
+		</main><!-- .content-area -->
 		<?php get_sidebar(); ?>
 	</div><!-- .row -->
 </div><!-- .container -->
