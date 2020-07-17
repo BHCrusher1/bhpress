@@ -1,13 +1,17 @@
 <?php
 
-// cssの読み込み
+/**
+ * スタイルシートの読み込み
+ */
 function add_stylesheet() {
 	wp_enqueue_style( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css', array(), null );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), date( 'YmdHi', filemtime( get_stylesheet_directory() . '/style.css' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'add_stylesheet' );
 
-// スクリプトの読み込み
+/**
+ * スクリプトの読み込み
+ */
 function add_script() {
 	// WP標準のjQueryの読み込みを止める
 	wp_deregister_script( 'jquery' );
@@ -17,25 +21,19 @@ function add_script() {
 }
 add_action( 'wp_enqueue_scripts', 'add_script' );
 
+/**
+ * footerにインラインのスクリプトを追加
+ */
 function insert_inline_script() {
 	if ( function_exists( 'wp_add_inline_script' ) ) {
-		$inlineScript = file_get_contents( get_template_directory_uri().'/inlineScript.js', true );
+		$inlineScript = file_get_contents( get_template_directory_uri() . '/inlineScript.js', true );
 
 		wp_add_inline_script( 'jquery', $inlineScript );
 	}
 }
 add_action( 'wp_footer', 'insert_inline_script' );
 
-// カスタムロゴを有効化
-add_theme_support(
-	'custom-logo',
-	array(
-		'height'      => 190,
-		'width'       => 190,
-		'flex-width'  => false,
-		'flex-height' => false,
-	)
-);
+
 
 // メニューの位置を指定
 register_nav_menus(
@@ -44,12 +42,42 @@ register_nav_menus(
 	)
 );
 
-add_theme_support( 'title-tag' );
-add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 825, 510, true );
-
 function bhpress_setup() {
+
+	// <head>に<title>タグを追加
+	add_theme_support( 'title-tag' );
+
+	// 検索フォーム、コメントフォーム、コメントのデフォルトのコアマークアップを切り替えて、有効なHTML5を出力する
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
+		)
+	);
+
+	// 投稿のサムネイル有効化
+	add_theme_support( 'post-thumbnails' );
+
+	// サムネイルサイズの設定
+	set_post_thumbnail_size( 825, 510, true );
+
+	// カスタムロゴを有効化
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 190,
+			'width'       => 190,
+			'flex-width'  => false,
+			'flex-height' => false,
+		)
+	);
+
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
@@ -150,5 +178,5 @@ add_action( 'widgets_init', 'remove_recent_comments_style' );
  * テンプレートファイルを分離
  */
 
-//パンくずリスト
+// パンくずリスト
 require get_template_directory() . '/inc/template-breadcrumb.php';
