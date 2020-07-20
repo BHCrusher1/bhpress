@@ -33,8 +33,6 @@ function insert_inline_script() {
 }
 add_action( 'wp_footer', 'insert_inline_script' );
 
-
-
 // メニューの位置を指定
 register_nav_menus(
 	array(
@@ -42,6 +40,9 @@ register_nav_menus(
 	)
 );
 
+/**
+ * bhpressテーマの設定
+ */
 function bhpress_setup() {
 
 	// <head>に<title>タグを追加
@@ -65,7 +66,7 @@ function bhpress_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// サムネイルサイズの設定
-	set_post_thumbnail_size( 825, 510, true );
+	set_post_thumbnail_size( 960, 593, true );
 
 	// カスタムロゴを有効化
 	add_theme_support(
@@ -78,6 +79,10 @@ function bhpress_setup() {
 		)
 	);
 
+	// カスタム画像サイズの追加
+	add_image_size( 'bh-medium', 540, 540 );
+	add_image_size( 'bh-large', 960, 960 );
+
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
@@ -88,6 +93,18 @@ function bhpress_setup() {
 	add_theme_support( 'wp-block-styles' );
 }
 add_action( 'after_setup_theme', 'bhpress_setup' );
+
+// 追加したカスタム画像サイズをプルダウンの選択肢に追加する
+function bhpress_add_bh_size( $sizes ) {
+	return array_merge(
+		$sizes,
+		array(
+			'bh-medium' => __( 'BHpress-本文縦(540px)' ),
+			'bh-large'  => __( 'BHpress-本文横(960px)' ),
+		)
+	);
+}
+add_filter( 'image_size_names_choose', 'bhpress_add_bh_size' );
 
 // oEmbedのカスタマイズ
 remove_action( 'embed_head', 'print_embed_styles' );
