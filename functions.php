@@ -196,4 +196,4 @@ add_action( 'widgets_init', 'remove_recent_comments_style' );
  */
 
 // パンくずリスト
-require get_template_directory() . '/inc/template-breadcrumb.php';
+require get_template_directory() . '/template-parts/breadcrumb.php';
