@@ -28,7 +28,7 @@ Template Name: サイドバー無し
 						?>
 					</header>
 					<?php
-					get_template_part( 'template-parts/content/sns' );
+					get_template_part( 'template-parts/sns' );
 					if ( has_post_thumbnail() ) { // アイキャッチ画像がある
 						echo '<div class="single-featured-image-header">';
 						if ( is_single() ) { // 個別投稿のページを表示中
@@ -44,7 +44,7 @@ Template Name: サイドバー無し
 					the_content( '続きを読む ' );
 					?>
 					</div><!-- .container entry-content -->
-				<?php get_template_part( 'template-parts/content/sns' ); ?>
+				<?php get_template_part( 'template-parts/sns' ); ?>
 				</article>
 			</main><!-- .site-main -->
 		</section><!-- .content-area -->
