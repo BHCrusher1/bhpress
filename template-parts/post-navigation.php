@@ -2,23 +2,36 @@
 /**
  * 各記事の本体
  */
-?>
-<nav class="container my-3 navigation post-navigation" role="navigation">
-	<h4 class="h5">前後の記事</h4>
+
+$next_post = get_next_post();
+$prev_post = get_previous_post();
+
+if ( $next_post || $prev_post ) {
+	$navigation_title = '前後の記事';
+
+	?>
+<nav class="container my-3 navigation post-navigation" aria-label="<?php printf( $navigation_title ); ?>" role="navigation">
+	<h4 class="h5"><?php printf( $navigation_title ); ?></h4>
 	<ul class="nav nav-pills nav-justified nav-links">
-		<?php
-		if ( get_previous_post() ) : // 前の記事の有無
-			?>
-			<li class="nav-item nav-previous">前の記事<br><?php previous_post_link( '%link', '← %title' ); ?></li>
+		<li class="nav-item nav-previous"><span>前の記事</span><br>
+		<?php if ( $prev_post ) : // 前の記事の有無 ?>
+			<a class="previous-post" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
+			<span class="arrow" aria-hidden="true">&larr;</span><span><?php echo wp_kses_post( get_the_title( $prev_post->ID ) ); ?></span></a>
 		<?php else : ?>
-			<li class="nav-item nav-previous">前の記事<br>前の記事がありません</li>
+			<span>前の記事がありません</span>
 		<?php endif; ?>
-		<?php
-		if ( get_next_post() ) : // 後ろの記事の有無
-			?>
-			<li class="nav-item nav-next">次の記事<br><?php next_post_link( '%link', '%title →' ); ?></li>
+		</li>
+
+		<li class="nav-item nav-next"><span>次の記事</span><br>
+		<?php if ( get_next_post() ) : // 後ろの記事の有無 ?>
+			<a class="next-post" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
+			<span><?php echo wp_kses_post( get_the_title( $next_post->ID ) ); ?></span><span class="arrow" aria-hidden="true">&rarr;</span></a>
 		<?php else : ?>
-			<li class="nav-item nav-next">次の記事<br>次の記事がありません</li>
+			<span>次の記事がありません</span>
 		<?php endif; ?>
+		</li>
 	</ul>
 </nav>
+
+	<?php
+}
