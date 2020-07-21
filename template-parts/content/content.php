@@ -24,11 +24,11 @@
 	</div><!-- .container entry-content -->
 
 	<?php
-	get_template_part( 'template-parts/sns' );
 	// 個別投稿のページを表示中
 	if ( is_single() ) {
 		get_template_part( 'template-parts/post-navigation' ); // 前後の記事
 		get_template_part( 'template-parts/article-related' ); // 同じカテゴリの記事
+		get_template_part( 'template-parts/sns' ); // SNSボタン
 	}
 	?>
 </article>
