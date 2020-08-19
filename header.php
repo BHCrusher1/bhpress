@@ -2,6 +2,7 @@
 /**
  * ページのheadと、headerを読み込む部分
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -44,7 +45,7 @@
 						$description = get_bloginfo( 'description', 'display' ); // サイトのキャッチフレーズを取得
 						if ( $description || is_customize_preview() ) : // サイトのキャッチフレーズが空でない場合
 					?>
-						<p class="text-secondary h5 site-description"><?php echo $description; ?></p>
+						<p class="text-secondary h5 site-description"><?php echo ( esc_attr( $description ) ); ?></p>
 					<?php endif; ?>
 
 				</div><!-- .header-titles -->

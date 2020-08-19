@@ -2,10 +2,11 @@
 /**
  * 各記事のヘッダ（タイトル・投稿日・更新日・カテゴリ）の部分
  */
+
 ?>
 <header class="container bg-primary text-white entry-header">
 	<?php
-	if ( is_single() or is_page() ) { // 個別ページの場合
+	if ( is_single() || is_page() ) { // 個別ページの場合
 		the_title( '<h1 class="d-inline-block h2 text-white entry-title">', '</h1>' );
 	} elseif ( is_front_page() && is_home() ) { // トップページ（ホームとフロントページ）の場合
 		the_title( '<h3 class="d-inline-block h2 entry-title"><a class="text-white" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );

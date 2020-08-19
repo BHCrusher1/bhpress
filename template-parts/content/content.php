@@ -2,6 +2,7 @@
 /**
  * 各記事の本体
  */
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-3' ); ?>>
 	<?php

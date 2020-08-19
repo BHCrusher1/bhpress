@@ -10,7 +10,7 @@ if ( $next_post || $prev_post ) {
 	$navigation_title = '前後の記事';
 
 	?>
-<nav class="container my-3 navigation post-navigation" aria-label="<?php printf( $navigation_title ); ?>" role="navigation">
+<nav class="container my-3 navigation post-navigation" aria-label="<?php printf( esc_attr( $navigation_title ) ); ?>" role="navigation">
 	<h4 class="h5"><?php printf( $navigation_title ); ?></h4>
 	<ul class="nav nav-pills nav-justified nav-links">
 		<li class="nav-item nav-previous"><span>前の記事</span><br>

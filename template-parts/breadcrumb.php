@@ -4,8 +4,8 @@
  */
 function breadcrumb() {
 	global $post;
-	$str  = '';
-	$pNum = 2;
+	$str   = '';
+	$p_num = 2;
 
 	$str .= '<nav aria-label="breadcrumb">';
 	$str .= '<ol id="breadcrumb" class="breadcrumb my-0" itemprop="Breadcrumb" itemscope itemtype="http://data-vocabulary.org/BreadcrumbList">';
@@ -23,13 +23,13 @@ function breadcrumb() {
 		if ( $cat->parent != 0 ) {
 			$ancestors = array_reverse( get_ancestors( $cat->cat_ID, 'category' ) );
 			foreach ( $ancestors as $ancestor ) {
-				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $ancestor ) . '"><span itemprop="name">' . get_cat_name( $ancestor ) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
-				$pNum++;
+				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $ancestor ) . '"><span itemprop="name">' . get_cat_name( $ancestor ) . '</span></a><meta itemprop="position" content="' . $p_num . '"></li>';
+				$p_num++;
 			}
 		}
-		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $cat->term_id ) . '"><span itemprop="name">' . $cat->cat_name . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
-		$pNum++;
-		$str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $cat->term_id ) . '"><span itemprop="name">' . $cat->cat_name . '</span></a><meta itemprop="position" content="' . $p_num . '"></li>';
+		$p_num++;
+		$str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $p_num . '"></li>';
 	}
 
 	/* カスタムポスト */
@@ -42,28 +42,28 @@ function breadcrumb() {
 
 	/* 固定ページ */
 	elseif ( is_page() ) {
-		$pNum = 2;
+		$p_num = 2;
 		if ( $post->post_parent != 0 ) {
 			$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 			foreach ( $ancestors as $ancestor ) {
-				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink( $ancestor ) . '"><span itemprop="name">' . get_the_title( $ancestor ) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
-				$pNum++;
+				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink( $ancestor ) . '"><span itemprop="name">' . get_the_title( $ancestor ) . '</span></a><meta itemprop="position" content="' . $p_num . '"></li>';
+				$p_num++;
 			}
 		}
-		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $p_num . '"></li>';
 	}
 
 	/* カテゴリページ */
 	elseif ( is_category() ) {
-		$cat  = get_queried_object();
-		$pNum = 2;
+		$cat   = get_queried_object();
+		$p_num = 2;
 		if ( $cat->parent != 0 ) {
 			$ancestors = array_reverse( get_ancestors( $cat->cat_ID, 'category' ) );
 			foreach ( $ancestors as $ancestor ) {
-				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $ancestor ) . '"><span itemprop="name">' . get_cat_name( $ancestor ) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
+				$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_category_link( $ancestor ) . '"><span itemprop="name">' . get_cat_name( $ancestor ) . '</span></a><meta itemprop="position" content="' . $p_num . '"></li>';
 			}
 		}
-		$str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $cat->name . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+		$str .= '<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $cat->name . '</span><meta itemprop="position" content="' . $p_num . '"></li>';
 	}
 
 	/* タグページ */
@@ -92,12 +92,12 @@ function breadcrumb() {
 
 	/* 添付ファイルページ */
 	elseif ( is_attachment() ) {
-		$pNum = 2;
+		$p_num = 2;
 		if ( $post->post_parent != 0 ) {
-			$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink( $post->post_parent ) . '"><span itemprop="name">' . get_the_title( $post->post_parent ) . '</span></a><meta itemprop="position" content="' . $pNum . '"></li>';
-			$pNum++;
+			$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="' . get_permalink( $post->post_parent ) . '"><span itemprop="name">' . get_the_title( $post->post_parent ) . '</span></a><meta itemprop="position" content="' . $p_num . '"></li>';
+			$p_num++;
 		}
-		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $pNum . '"></li>';
+		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">' . $post->post_title . '</span><meta itemprop="position" content="' . $p_num . '"></li>';
 	}
 
 	/* 検索結果ページ */
@@ -108,9 +108,7 @@ function breadcrumb() {
 	/* 404 Not Found ページ */
 	elseif ( is_404() ) {
 		$str .= '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><span itemprop="name">お探しの記事は見つかりませんでした。</span><meta itemprop="position" content="2"></li>';
-	}
-
-	elseif ( is_home() || is_front_page() ) {
+	} elseif ( is_home() || is_front_page() ) {
 	}
 
 	/* その他のページ */

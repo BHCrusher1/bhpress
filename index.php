@@ -3,12 +3,12 @@
 	<?php
 	$archive_header = '';
 	if ( is_search() ) {
-		$archive_header = sprintf('検索:“<span>' . get_search_query() . '</span>”');
+		$archive_header = sprintf( '検索:“<span>' . get_search_query() . '</span>”' );
 	} elseif ( is_date() ) {
 		$archive_header = get_the_archive_title();
 	}
 	if ( $archive_header ) {
-		echo ('<header class="page-header"><h1 class="h2 page-title my-1">' . $archive_header . '</h1></header><!-- .page-header -->');
+		echo ( '<header class="page-header"><h1 class="h2 page-title my-1">' . $archive_header . '</h1></header><!-- .page-header -->' );
 	}
 	breadcrumb();
 	?>

@@ -2,6 +2,7 @@
 /**
  * 投稿が存在しなかった場合のページ（のはず）
  */
+
 ?>
 <section class="container bg-white mb-3 no-results not-found">
 	<header class="page-header">

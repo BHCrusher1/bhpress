@@ -11,8 +11,7 @@ if ( ! headers_sent() ) {
 <html <?php language_attributes(); ?>>
 
 <head>
-	<title><?php echo wp_get_document_title(); ?>
-	</title>
+	<title><?php echo wp_get_document_title(); ?></title>
 	<?php do_action( 'embed_head' ); ?>
 	<style>
 		.wp-embed{display:flex;align-items:center;text-decoration:none;background-color:#FFF;color:#00369C;padding:0.5em;border-radius:1em;border:solid 2px #9E9E9E}

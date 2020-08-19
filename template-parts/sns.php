@@ -2,11 +2,12 @@
 /**
  * SNSボタン
  */
+
 ?>
 <?php
 $share_url   = get_permalink();
 $share_title = get_the_title();
-$related_id = 'BHCrusher1';
+$related_id  = 'BHCrusher1';
 ?>
 <nav class="container my-3">
 	<ul class="nav text-center sns">

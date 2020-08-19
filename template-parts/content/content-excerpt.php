@@ -2,6 +2,7 @@
 /**
  * 検索結果画面の記事
  */
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-3' ); ?>>
 	<?php

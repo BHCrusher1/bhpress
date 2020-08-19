@@ -2,10 +2,11 @@
 /**
  * 各記事の本体
  */
-$since  = '2015';
-$until  = '2020';
-$link   = 'https://twitter.com/BHCrusher1';
-$author = 'BHCrusher1';
+
+$since        = '2015';
+$until        = '2020';
+$profile_link = 'https://twitter.com/BHCrusher1';
+$author       = 'BHCrusher1';
 ?>
 <footer id="site-footer" role="contentinfo" class="bg-white py-2 site-footer">
 	<div class="site-info">
@@ -21,7 +22,7 @@ $author = 'BHCrusher1';
 			}
 			?>
 		</p>
-		<p class="text-center mb-0">&copy; <?php echo( $since ); ?>-<?php echo( $until ); ?> <a href="<?php echo( $link ); ?>" target="_blank" rel="noopener"><?php echo( $author ); ?></a></p>
+		<p class="text-center mb-0">&copy; <?php echo( $since ); ?>-<?php echo( $until ); ?> <a href="<?php echo( esc_url( $profile_link ) ); ?>" target="_blank" rel="noopener"><?php echo( $author ); ?></a></p>
 	</div><!-- .site-info -->
 </footer><!-- #site-footer -->
 </div><!-- #page -->

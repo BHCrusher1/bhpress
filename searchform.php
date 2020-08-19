@@ -2,6 +2,7 @@
 /**
  * 検索フォーム
  */
+
 ?>
 <form role="search" method="get" class="container d-flex py-3 mb-3 bg-white search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label class="sr-only" for="search">
