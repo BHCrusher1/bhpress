@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container-xl mb-auto">
+<div id="site-content" class="container-xl mb-auto">
 	<?php
 	$archive_header = '';
 	if ( is_search() ) {
@@ -12,7 +12,7 @@
 	}
 	breadcrumb();
 	?>
-	<div class="row">
+	<div class="row gx-0 gx-md-4">
 		<main id="main" class="col-md-9 content-area" role="main">
 		<?php
 		if ( have_posts() ) {
