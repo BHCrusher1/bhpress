@@ -5,13 +5,13 @@ Template Name: サイドバー無し
 ?>
 
 <?php get_header(); ?>
-<div class="container mb-auto">
+<div class="container-xl mb-auto">
 	<?php breadcrumb(); ?>
 	<div class="row">
 		<section id="primary" class="col content-area">
 			<main id="main" class="site-main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-3' ); ?>>
-					<header class="container bg-primary text-white entry-header">
+					<header class="container-fluid bg-primary text-white entry-header">
 						<?php
 						if ( have_posts() ) :
 							while ( have_posts() ) :
@@ -37,18 +37,18 @@ Template Name: サイドバー無し
 							the_post_thumbnail();
 						}
 						echo '</div><!-- .single-featured-image-header -->';
-						echo '<div class="container entry-content border-bottom">';
+						echo '<div class="container-fluid entry-content border-bottom">';
 					} else { // アイキャッチ画像無し
-						echo '<div class="container entry-content border-top border-bottom">';
+						echo '<div class="container-fluid entry-content border-top border-bottom">';
 					}
 					the_content( '続きを読む ' );
 					?>
-					</div><!-- .container entry-content -->
+					</div><!-- .container-fluid entry-content -->
 				<?php get_template_part( 'template-parts/sns' ); ?>
 				</article>
 			</main><!-- .site-main -->
 		</section><!-- .content-area -->
 	</div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container-xl -->
 <?php
 get_footer();

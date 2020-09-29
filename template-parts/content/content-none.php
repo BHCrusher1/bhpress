@@ -4,7 +4,7 @@
  */
 
 ?>
-<section class="container bg-white mb-3 no-results not-found">
+<section class="container-fluid bg-white mb-3 no-results not-found">
 	<header class="page-header">
 		<h1 class="h2 page-title">何も見つかりませんでした</h1>
 	</header><!-- .page-header -->

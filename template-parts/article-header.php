@@ -4,7 +4,7 @@
  */
 
 ?>
-<header class="container bg-primary text-white entry-header">
+<header class="container-fluid bg-primary text-white entry-header">
 	<?php
 	if ( is_single() || is_page() ) { // 個別ページの場合
 		the_title( '<h1 class="d-inline-block h2 text-white entry-title">', '</h1>' );

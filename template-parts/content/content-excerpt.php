@@ -12,12 +12,12 @@
 		<?php
 		if ( has_post_thumbnail() ) { // アイキャッチ画像がある場合
 			echo '<div class="post-thumbnail">', the_post_thumbnail( 'thumbnail' ), '</div>';
-			echo '<div class="container entry-content">';
+			echo '<div class="container-fluid entry-content">';
 		} else { // アイキャッチ画像が無い場合.no-thumbnailを追加
-			echo '<div class="container entry-content no-thumbnail">';
+			echo '<div class="container-fluid entry-content no-thumbnail">';
 		}
 		the_excerpt();
 		?>
-		</div><!-- .container entry-content -->
+		</div><!-- .container-fluid entry-content -->
 	</div><!-- .entry-excerpt -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -3,7 +3,6 @@ jQuery( function( $ ) {
 	$( '.more-link, .read-more' ).addClass( 'btn btn-info my-3' );
 	$( '.cat-links a' ).addClass( 'text-white' );
 	$( '#secondary section' ).addClass( 'mb-3' );
-	$( '#secondary section' ).children( '*' ).not( 'div' ).addClass( 'container' );
 	$( '#secondary section ul' ).addClass( 'list-group list-group-flush p-0' );
 	$( '#secondary section li' ).addClass( 'list-group-item' );
 	$( 'ul.page-numbers' ).addClass( 'pagination mb-0' );

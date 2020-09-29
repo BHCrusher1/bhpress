@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container mb-auto">
+<div class="container-xl mb-auto">
 	<?php
 	$archive_header = '';
 	if ( is_search() ) {
@@ -38,6 +38,6 @@
 		</main><!-- .content-area -->
 		<?php get_sidebar(); ?>
 	</div><!-- .row -->
-</div><!-- .container -->
+</div><!-- .container-xl -->
 <?php
 get_footer();

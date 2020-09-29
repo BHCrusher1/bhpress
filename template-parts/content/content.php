@@ -11,7 +11,7 @@
 	get_template_part( 'template-parts/featured-image' );
 	?>
 
-	<div class="container p-3 entry-content">
+	<div class="container-fluid p-3 entry-content">
 
 	<?php
 	// 個別投稿のページを表示中
@@ -22,7 +22,7 @@
 	}
 	?>
 
-	</div><!-- .container entry-content -->
+	</div><!-- .container-fluid entry-content -->
 
 	<?php
 	// 個別投稿のページを表示中
