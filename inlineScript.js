@@ -7,8 +7,9 @@ jQuery( function( $ ) {
 	$( '#secondary section li' ).addClass( 'list-group-item' );
 	$( 'ul.page-numbers' ).addClass( 'pagination mb-0' );
 	$( 'ul.page-numbers li' ).addClass( 'px-3' );
-	$( '#comments .form-submit #submit' ).addClass( 'btn btn-outline-primary' );
-	$( '#comments input[type="text"], #comments input[type="email"], #comments input[type="url"], #comments textarea' ).addClass( 'form-control' );
+	$( '#respond .form-submit #submit' ).addClass( 'btn btn-outline-primary' );
+	$( '#respond input[type="text"], #respond input[type="email"], #respond input[type="url"], #respond textarea' ).addClass( 'form-control' );
+	$( '.comment-meta' ).children( '*' ).addClass( 'd-inline-block' );
 
 	// https://qiita.com/Takuya_Kouyama/items/b815eb5e1f85d819b4d8
 	// 要jQuery slim版不可
