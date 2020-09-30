@@ -68,9 +68,8 @@ object {
 	overflow: hidden;
 }
 
-.site-title:not(:empty) + .site-description:not(:empty)::before {
-	content: "\2014";
-	margin: 0 0.2rem;
+.site-logo:not(:empty) + .site-title {
+	margin-left: 1rem;
 }
 
 /* ********************

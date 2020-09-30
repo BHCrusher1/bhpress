@@ -72,8 +72,8 @@ function bhpress_setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 190,
-			'width'       => 190,
+			'height'      => 192,
+			'width'       => 192,
 			'flex-width'  => false,
 			'flex-height' => false,
 		)
