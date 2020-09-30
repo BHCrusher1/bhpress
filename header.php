@@ -23,8 +23,8 @@
 
 	<div id="page" class="d-flex flex-column min-vh-100">
 		<header id="site-header" class="bg-white" role="banner">
-			<div class="container-fluid site-branding-container py-2">
-				<div class="header-titles d-flex">
+			<div class="container-xl site-branding-container">
+				<div class="header-titles my-2">
 
 					<?php if ( has_custom_logo() ) : // カスタムロゴがある場合 ?>
 						<div class="site-logo"><?php the_custom_logo(); ?></div>
@@ -51,7 +51,7 @@
 				</div><!-- .header-titles -->
 
 				<?php if ( has_nav_menu( 'headerMenu-1' ) ) : // メニューがある場合メニューを表示 ?>
-					<nav id="site-navigation" class="header-navigation" role="navigation">
+					<nav id="site-navigation" class="header-navigation my-2" role="navigation">
 					<?php
 					wp_nav_menu(
 						array(
