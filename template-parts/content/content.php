@@ -2,35 +2,43 @@
 /**
  * 各記事の本体
  */
+
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('bg-white mb-3'); ?>>
-    <?php
-    get_template_part('template-parts/content/article-header');
-    get_template_part('template-parts/content/sns');
-    if (has_post_thumbnail()) { //アイキャッチ画像がある
-        echo '<div class="single-featured-image-header">';
-        if (is_single()) { //個別投稿のページを表示中
-            the_post_thumbnail('large');
-        } else { //個別投稿以外のページ
-            the_post_thumbnail();
-        }
-        echo '</div><!-- .single-featured-image-header -->';
-        echo '<div class="container entry-content border-bottom">';
-    } else { //アイキャッチ画像無し
-        echo '<div class="container entry-content border-top pt-3 border-bottom">';
-    }
-    if (is_single()) { //個別投稿のページを表示中
-        the_content(); //全部を表示
-    } else {
-        the_content('続きを読む '); //moreまで表示
-    }
-    ?>
-    </div><!-- .container entry-content -->
-    <?php
-    get_template_part('template-parts/content/sns');
-    if (is_single()) { //個別投稿のページを表示中
-        get_template_part('template-parts/content/post-navigation'); //前後の記事
-        get_template_part('template-parts/content/article-related'); //同じカテゴリの記事
-    }
-    ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-white mb-3' ); ?>>
+	<?php
+	get_template_part( 'template-parts/article-header' );
+	get_template_part( 'template-parts/sns' );
+	get_template_part( 'template-parts/featured-image' );
+	?>
+
+	<div class="container-fluid p-3 entry-content">
+
+	<?php
+	// 個別投稿のページを表示中
+	if ( is_single() ) {
+		the_content(); // 全部を表示
+	} else {
+		the_content( '続きを読む ' ); // moreまで表示
+	}
+	?>
+
+	</div><!-- .container-fluid entry-content -->
+
+	<?php
+	// 個別投稿のページを表示中
+	if ( is_single() ) {
+		get_template_part( 'template-parts/post-navigation' ); // 前後の記事
+		get_template_part( 'template-parts/article-related' ); // 同じカテゴリの記事
+		get_template_part( 'template-parts/sns' ); // SNSボタン
+	}
+
+	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+		?>
+
+		<?php comments_template(); ?>
+
+		<?php
+	}
+	?>
+
 </article>

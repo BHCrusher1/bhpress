@@ -1,12 +1,13 @@
 @charset "utf-8";
+
 /*
-theme Name: BHpress
+theme Name: BHpress-Develop
 Theme URL: https://github.com/BHCrusher1/BHpress
 Description: ブログ「地測の記」で使用するために制作したテーマ。ブログ: https://bhcrusher1.net/
 Author: BHCrusher1
 Author URI: https://twitter.com/BHCrusher1
-Version: 2.1
-Tags: 
+Version: 3.0 alpha1
+Tags:
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -16,17 +17,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ******************** */
 
 html {
-  font-size: calc(0.875rem + ((1vw - 3.2px) * 0.2841));
+	font-size: calc(0.875rem + ((1vw - 3.2px) * 0.2976));
 }
 
-@media (min-width: 1024px) {
-  html {
-    font-size: 16px;
-  }
+@media (min-width: 992px) {
+	html {
+		font-size: 16px;
+	}
 }
 
-body {
-  background-color: #f8e3bb;
+#page {
+	background-color: #f8e3bb;
 }
 
 /* ********************
@@ -34,34 +35,41 @@ body {
 ******************** */
 
 img {
-  max-width: 100%;
-  height: auto;
-  float: none;
+	max-width: 100%;
+	height: auto;
+	float: none;
 }
 
 embed,
 iframe,
 object {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 /* ********************
 	[3] headerの設定
 ******************** */
 
-/* カスタムロゴ */
-.site-logo .custom-logo-link {
-  border-radius: 100%;
-  box-sizing: content-box;
-  display: block;
-  width: 64px;
-  height: 64px;
-  overflow: hidden;
+.header-titles {
+	align-items: center;
 }
 
-.site-title:not(:empty) + .site-description:not(:empty):before {
-  content: "\2014";
-  margin: 0 0.2rem;
+.header-titles > * {
+	margin-bottom: 0;
+}
+
+/* カスタムロゴ */
+.site-logo .custom-logo-link {
+	border-radius: 100%;
+	box-sizing: content-box;
+	display: block;
+	width: 64px;
+	height: 64px;
+	overflow: hidden;
+}
+
+.site-logo:not(:empty) + .site-title {
+	margin-left: 1rem;
 }
 
 /* ********************
@@ -70,7 +78,20 @@ object {
 
 /* パンくずリストの背景色を初期化 */
 .breadcrumb {
-  background-color: initial;
+	background-color: initial;
+}
+
+/* 横768px以上の時以外はサイト横の余白を消す */
+#site-content {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+@media (min-width: 768px) {
+	#site-content {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
 }
 
 /* ********************
@@ -82,46 +103,45 @@ object {
 ******************** */
 
 .sns {
-  display: flex;
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .sns li {
-  width: 30%;
+	width: 30%;
 }
 
 .sns a {
-  border-radius: 1.25rem;
+	border-radius: 1.25rem;
 }
 
 .share-twitter {
-  background: #1da1f2;
-  box-shadow: 0 4px 2px rgba(29, 161, 242, 0.2);
-  transition: 0.4s;
+	background: #1da1f2;
+	box-shadow: 0 4px 2px rgba(29, 161, 242, 0.2);
 }
 
-.share-twitter:hover {
-  background: #4892cb;
+.share-twitter:hover,
+.share-twitter:focus {
+	background: #4892cb;
 }
 
 .share-facebook {
-  background: #4267b2;
-  box-shadow: 0 4px 2px rgba(66, 103, 178, 0.2);
-  transition: 0.4s;
+	background: #4267b2;
+	box-shadow: 0 4px 2px rgba(66, 103, 178, 0.2);
 }
 
-.share-facebook:hover {
-  background: #365899;
+.share-facebook:hover,
+.share-facebook:focus {
+	background: #365899;
 }
 
 .share-line {
-  background: #1dcd00;
-  box-shadow: 0 4px 2px rgba(29, 205, 0, 0.2);
-  transition: 0.4s;
+	background: #1dcd00;
+	box-shadow: 0 4px 2px rgba(29, 205, 0, 0.2);
 }
 
-.share-line:hover {
-  background: #2bd92b;
+.share-line:hover,
+.share-line:focus {
+	background: #2bd92b;
 }
 
 /* ********************
@@ -129,47 +149,47 @@ object {
 ******************** */
 
 article nav:last-child {
-  padding-bottom: 1rem;
+	padding-bottom: 1rem;
 }
 
 .single-featured-image-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5em;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.5em;
 }
 
 .no-thumbnail {
-  margin-left: calc(75px + 1em);
+	margin-left: calc(75px + 1em);
 }
 
 .wp-embedded-content {
-  max-width: 100%;
-  height: calc(104px + 1em);
+	max-width: 100%;
+	height: calc(104px + 1em);
 }
 
 .wp-caption,
 .gallery-caption {
-  margin: 0;
-  max-width: 100%;
+	margin: 0;
+	max-width: 100%;
 }
 
 .entry-content .wp-block-image figcaption {
-  font-size: 1rem;
-  color: initial;
+	font-size: 1rem;
+	color: initial;
 }
 
 .wp-block-image .aligncenter img {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 .wp-block-image .alignright {
-  float: none;
-  margin-left: auto;
+	float: none;
+	margin-left: auto;
 }
 
 .wp-block-image .alignleft {
-  float: none;
-  margin-right: auto;
+	float: none;
+	margin-right: auto;
 }
 
 .break-word {
@@ -181,44 +201,39 @@ article nav:last-child {
 ******************** */
 
 .related ul li + li {
-  border-top: 1px solid #ddd;
+	border-top: 1px solid #ddd;
 }
 
 .related ul li a {
-  display: flex;
-  width: 100%;
+	display: flex;
+	width: 100%;
 }
 
 .post-thumbnail {
-  width: 75px;
-  height: 75px;
-  margin: auto 0.5rem;
+	width: 75px;
+	height: 75px;
+	margin: auto 0.5rem;
 }
 
 .related-meta {
-  justify-content: center;
+	justify-content: center;
 }
 
 /* ********************
 	[9] コメント欄の設定
 ******************** */
 
-h2.comments-title,
 h3#reply-title {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .comment-navigation h2.screen-reader-text {
-  display: none;
-}
-
-.comment-navigation {
-  margin-bottom: 1rem;
+	display: none;
 }
 
 .comment-navigation .nav-links {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 /* ********************
@@ -228,7 +243,7 @@ h3#reply-title {
 .pagination .page-numbers,
 .comment-navigation .nav-links,
 .post-navigation .nav-links {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /* ********************
@@ -237,7 +252,7 @@ h3#reply-title {
 
 #secondary section ul li,
 #secondary section ol li {
-  word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 /* ********************
