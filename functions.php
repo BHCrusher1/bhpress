@@ -4,7 +4,7 @@
  * スタイルシートの読み込み
  */
 function add_stylesheet() {
-	wp_enqueue_style( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css', array(), null );
+	wp_enqueue_style( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css', array(), null );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), date( 'YmdHi', filemtime( get_stylesheet_directory() . '/style.css' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'add_stylesheet' );
@@ -17,7 +17,7 @@ function add_script() {
 	wp_deregister_script( 'jquery' );
 	// スクリプトの読み込み
 	wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true );
-	wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js', array(), null, true );
+	wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js', array(), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'add_script' );
 
